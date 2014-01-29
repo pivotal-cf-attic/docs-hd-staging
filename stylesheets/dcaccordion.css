@@ -1,35 +1,11 @@
 /* Page */
 body,html,div,blockquote,img,label,p,h1,h2,h3,h4,h5,h6,pre,ul,ol,li,dl,dt,dd,form,a,fieldset,input,th,td{border:0;outline:none;margin:0;padding:0;}
-
-.myclass>ul>li
-
-/* Pivotal: Left-hand navigation: ul */
-ul.accordion{
+ul, ul li{
 	list-style: none;
 	/* Pivotal: Left-hand navigation */
 	font-size: 12px;
 	padding-left: 0px;
-	margin-left: -10px;
 	}
-
-/* Pivotal: Left-hand navigation: li */
-ul.accordion li{
-	list-style: none;
-	font-size: 12px;
-	padding-left: 0px;
-/* Reduce default list item indentation */
-	margin-left: -30px;
-	}
-
-/*Pivotal: Line separator between top-level li */
-ul.accordion>li {
-	margin: 0 0 -5px 0;
-	border-bottom:2px solid #cccccc;
-	padding: 0px 0 0px 0;
-	padding: 20px 0 20px 0;
-	padding: 20px 0 20px 0;
-	}
-
 ul.text {margin-bottom: 1em; line-height: 1.5em;}
 .text-center {text-align: center;}
 body {font: normal 13px Arial, sans-serif;}

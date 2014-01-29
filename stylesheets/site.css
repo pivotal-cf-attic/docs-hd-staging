@@ -1,4 +1,3 @@
-
 /* This is the css stylesheet for the Confluence HTML Converter 
 Notes related to the Confluence HTML Converter are denoted by a PPD.
 The primary section for Confluence HTML is plainly marked and contains 
@@ -205,47 +204,29 @@ ul.toc-indentation {
 font-size: medium;
 }	
 	
-/* Pivotal: Headings */
+/* Pivotal */
 .content h1 {
-    font-size: 40px;
-	color: #000000;
-    font-weight: normal;
-/* Prevent a wrapped line from bleeding into itself */
-    line-height: 40px;
-    margin: 0 0 10px;
-    padding: 0 0 5px;
-    text-shadow: 0 -1px #FFFFFF;
-} !important
-
-.wiki-content h4 {
-    line-height: 30px;
+    color: #3C3D42;
+    font-family: 'freight-sansp',sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 46px;
+    margin-bottom: 20px;
+    padding: 0;
+    text-transform: none;
 } !important
 	
  h2, h3, h4, h5 {
     color: #FFFFFF;} !important
  h6 {
     color: #999999;} !important
+
 	
 /* if space-ia is on, we want width to be auto*/
 .ia-splitter .aui-page-panel {
     width: auto;
 }
 
-/* Pivotal: List items */
-#main ol {
-    line-height: 1.4;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    padding-left: 5px;
-}
-
-#main ul {
-    line-height: 1.4;
-    list-style-type: disc;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    padding-left: 5px;
-}
 
 #tocrbtoc* {
 visibility: hidden;
@@ -269,6 +250,11 @@ visibility: hidden;
 /* Pivotal: Indent ul > ul in mini-TOC at top of pages */
 .main-wrap ul ul {
 	padding-left: 40px;
+}
+
+/* Pivotal: Indent ordered and unordered lists throughout page */
+.content ol, .content ul {
+    padding-left: 40px !Important;
 }
 
 /* Pivotal: Indent nested lists */
@@ -1500,7 +1486,6 @@ span.content-type-spacedesc,
     background-repeat: no-repeat;
 }
 
-/* REMOVE
 a.content-type-user span,
 div.content-type-user,
 span.content-type-user,
@@ -1510,7 +1495,7 @@ span.content-type-userinfo,
 .icon-user {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAJ1BMVEX///9wcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHAzTstiAAAADXRSTlMAESIzVWZ3iLvM3e7/4Y781AAAAAlwSFlzAAALEgAACxIB0t1+/AAAABR0RVh0Q3JlYXRpb24gVGltZQAyLzEvMTOjOAfGAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAAFNJREFUCJljYGBg7DkhwAACHGfONIAZPGfOHEBlwKXgiuGA7fSeAjDD58yZI2Ale86cOQ1SxH4GCBKADE4QYwGQoQNiHAYyYkCMY0CGBIjRiDANAMZAJ1J5cmzeAAAAAElFTkSuQmCC);
     background-repeat: no-repeat;
-} */
+}
 
 .ui-tree li a.home-node,
 .icon-home-page {
@@ -1555,7 +1540,7 @@ span.content-type-attachment-js,
 }
 /*End PDL icons.css*/
 
-/*NON PDL icons (To be updated)
+/*NON PDL icons (To be updated)*/
 .icon-browse-space {
     background-image: url(data:image/gif;base64,R0lGODlhEAAQAPcAAFBIWUt41FqxLiNQrKe53XxkdYe3gE+sKBREpnm154HMT+T2/5HGmbuMjGCMuFulimym4D9wpa7T909zvLnve3Q8PIK3wmfAXGaT3Fqbc5yx3Et6qp/eZnl9nLXYxaXF+sjU7GuMtShdk5G5+YRhYTZvhIWj4LDO7H21+Wy5mmm8PGOOmMihoV6EqUZ50G6qwW7Gcq95dqzncV2XnmmZ6p58fJa+7C9fwWNhcFesU15/wo+4knDEU9zQ0FKE3cnc/HKm95jX/He8w47F8HGPzFuBqIOk6JPXXX283n9yXE6DyK2/5MHX/GtUZ/T3/ZvD5l2xRXim8rvN8nGV33ZBQWGrfY/GjWqjnXK+QqPQqbLO+1qUtWaK1FB60ILKxM3f8ZLH+nic5tLi/Mf6hmS2ODBduXGp76PhalOrPYC155m06zNmmVJ5yXO2ZX+6mneEkoi+qIyq5zhsvo+4+bPsdqq/2Yii2WWdpWOH0f///3ac543RWL2UlHnGSdLe9ou4jp3B+l+si2KTwbPZ/6LQ/fH0+pm91LXH7Gq6P3ewwnur+H2Yz4Cw64LD3nyw5MTQ6XiW03NKSo+q4XTERUt73b7c+6jkbWuS4kyCzZbYX2u1Ok6Fr8ylpWK3NKK7331rdYe1jVKrNIPKXF2qi67W/r3yfoK10HK7XJzeay1fk5O6+YtfX4ay+GKGqZXD8jNjxc/g/IvH+qzB7GW3Q2ute12SvM7e99Xk/Yq45FWHyXe9YnGe63nFT////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUAL0ALAAAAAAQABAAAAj/AHsJ7OXHiA9KCMNIGchQTS0GonjQ4WVIzyUnDOPckXEExoVJWcQwsYixl6wZHGRwUDDmlAdYTOBcmdLLSQBdHCzRoVDKyq0fTNwc2fTlUK4+Ks6cAVVERIs6Wj7Q2mJCEoYDaDL9cfCkEi4HngDNidKFyy5TNqAUeZLni6s0IVRVmfUKDw1WIyykknDCFaFBERJh2XPDjg9FjEK1cgSG0IInG15MasNmiQsgD7DscJCG1BNBON4gygCpUBkzoxBhMbCixAYAMVgkWQOilwZMSEKRQUQmEIoOVBpwKjCQCKZGKQR0EhJryKcKfDjVGLhIDoQcKrwESaCkSYUGqxg+DdIxAIH5CQR6kYjUIyAAOw==);
 }
@@ -3034,41 +3019,6 @@ div.main .main-header.pageSectionHeader {background-image: url(header-image.jpg)
 color: #F16F3B
  }
  
-h1,
-.wiki-content h1,
- {
-    color: #3b7fc4;
-}
-
-h2,
-.wiki-content h2,
- {
-    color: #333333;
-}
-
-h3,
-.wiki-content h3,
- {
-    color: #333333;
-}
-
-h4,
-.wiki-content h4,
- {
-    color: #333333;
-}
-
-h5,
-.wiki-content h5,
- {
-    color: #333333;
-}
-
-h6,
-.wiki-content h6,
- {
-    color: #333333;
-}
 
 table.confluenceTable td.confluenceTd.highlight,
 table.confluenceTable td.confluenceTd.highlight > p,
@@ -3091,15 +3041,6 @@ table.admin th,
     border-left-color: #cccccc;
 }
 
-.wiki-content h1,
-.wiki-content h2 {
- 	border-bottom-color: #cccccc;
-}
-
-.wiki-content-preview {
-    border-left-color: #cccccc;
-    border-right-color: #cccccc;
-}
 
 .pageSectionHeader {
     border-bottom-color: #333333;
@@ -3150,16 +3091,7 @@ color: #3b73af; text-decoration: none;
 color: #FFFFFF; text-decoration: none;
 }
 
-/* Pivotal: links: REMOVED because of blue color shift in footer links in Chrome
-a,
-a:visited,
-a:focus,
-a:hover,
-a:active,
-a.blogHeading {
-    color: #3b73af;
-}*/
-
+/* links */
 .aui-nav-vertical li a:link,
 .aui-nav-vertical li a:focus,
 .aui-nav-vertical li a:visited,
@@ -3883,17 +3815,6 @@ h1#title-heading.with-breadcrumbs img {
 .aui-message p.title {
     font-weight: bold;
 }
-
-/* Pivotal: REMOVE
-.wiki-content p, .wiki-content ul, .wiki-content ol, .wiki-content table {
-    margin: 0 0 10px;
-} */
-.wiki-content p {
-    color: #333333;
-    font-weight: normal;
-    line-height: 25px;
-}
-
 
 /* Pivotal: Hints, notes, tips, and warnings: icons */
 .aui-message .aui-icon {

@@ -16,7 +16,6 @@ div.gsc-control-cse td.gsib_a {
 }
 
 div.gsc-control-cse input[type="button"] {
-    background-color: #007a6c !important;
     color: white;
     padding: 6px 20px 15px;
     font-size: 12px;
@@ -24,12 +23,14 @@ div.gsc-control-cse input[type="button"] {
     border: 1px solid white;
     text-transform: uppercase;
     font-weight: 100;
-    margin-top: -1px;
+    margin: -1px -5px 0 0;
     border-radius: 0;
+    height: 68px;
 }
 
-html {
+html, body {
     height: 100%;
+    min-height: 100%;
     margin: 0
 }
 
@@ -38,7 +39,6 @@ body {
     color: #67696E;
     font-family: 'freight-sans-pro',sans-serif;
     font-size: 12px;
-    height: 100%;
     margin: 0
 }
 a {
@@ -55,7 +55,8 @@ a:hover,a:focus {
     transition-property: background,color;
     transition-duration: .25s;
     -webkit-transition-property: background,color;
-    -webkit-transition-duration: .25s
+    -webkit-transition-duration: .25s;
+    cursor: pointer;
 }
 h1,h2 {
     color: #007167
@@ -63,7 +64,8 @@ h1,h2 {
 h1 {
     font-size: 21px;
     font-weight: normal;
-    line-height: 30px;
+/* Pivotal: REMOVE to fix issue with multiple H1 lines bleeding into each other
+    line-height: 30px; */
     margin: 0 0 10px;
     padding: 0;
     text-shadow: 0 -1px #fff
@@ -94,26 +96,17 @@ h4 {
     text-transform: uppercase
 }
 .wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -36px
+
 }
 .thumbnail {
     position: relative;
     background: #FBFAFA;
     border: 2px solid #66AFA9;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-    -webkit-box-shadow: 0 3px 0 #E8E8E8;
-    -moz-box-shadow: 0 3px 0 #E8E8E8;
-    box-shadow: 0 3px 0 #E8E8E8;
     display: inline-block;
     font-size: 12px;
     height: 210px;
     line-height: 1.25;
-    margin-bottom: 20px;
+    margin: 0 20px 20px 0;
     padding: 0;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -121,7 +114,7 @@ h4 {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     float: left;
-    position: relative
+    position: relative;
 }
 .thumbnail:hover {
     background: #DEE9E8;
@@ -150,11 +143,9 @@ h4 {
     left: 0;
     padding-top: 10px;
     padding-bottom: 10px;
-    height: 45px;
+    height: 92px;
     font-weight: normal;
-    font-size: 12px;
-    background: #DEE9E8;
-    border-radius: 0 0 9px 9px
+    font-size: 18px;
 }
 .thumbnail .caption {
     line-height: 1.2em;
@@ -170,7 +161,7 @@ h4 {
     display: none
 }
 .main-page .thumbnail {
-    height: 210px
+    height: 260px
 }
 .main-page .thumbnail.add-component .caption {
     display: block;
@@ -178,7 +169,8 @@ h4 {
 }
 .thumbnail .version {
     position: absolute;
-    bottom: 65px
+    bottom: 115px;
+    font-size: 14px;
 }
 .thumbnail.add-component {
     border-color: #B3B3B3;
@@ -187,6 +179,11 @@ h4 {
 }
 .thumbnail.add-component:hover {
     background: #DDD
+}
+.thumbnail:last-child {
+    background: none;
+    border: none;
+    height: 400px;
 }
 .site-footer {
     color: white;
@@ -226,7 +223,6 @@ header.navbar .navbar-inner {
     padding: 0;
     height: 99px;
     background-color: rgba(255,255,255,0.7);
-    margin-bottom: 50px;
 }
 
 .container-fluid {
@@ -356,15 +352,15 @@ header.navbar .navbar-inner .navbar-link:hover a {
 }
 
 .main-container {
-    padding-left: 54px;
-}
-
-.main.row-fluid .span3:first-child {
-    margin-left: 2.127659574468085%;
+    margin-top: 30px;
 }
 
 .main.row-fluid .thumbnail {
-    width: 220px;
+    width: 245px;
+}
+
+.main.row-fluid {
+    padding-bottom: 300px;
 }
 
 input.gsc-input {
@@ -378,6 +374,6 @@ input.gsc-search-button {
 #nav {
     position: fixed;
     top: 0;
-    z-index: 10000;
+    z-index: 800;
     width: 100%;
 }

@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
   <!-- REPLACE X WITH PRODUCT NAME -->
-  <title>Installing PHD Using the CLI | Pivotal HD/CC/ADS Documentation | Pivotal HD Docs</title>
+  <title>Installing PHD Using the CLI | Pivotal HD Docs | Pivotal HD Docs</title>
   <!-- Local CSS stylesheets -->
   <link href="stylesheets/master.css" media="screen,print" rel="stylesheet" type="text/css" />
   <link href="stylesheets/breadcrumbs.css" media="screen,print" rel="stylesheet" type="text/css" />
@@ -37,64 +40,154 @@
   <link href="stylesheets/skins/graphite.css" rel="stylesheet" type="text/css" />
   <link href="stylesheets/skins/grey.css" rel="stylesheet" type="text/css" /> 
   <!-- End left-navigation code -->
-
   <script src="javascripts/all.js" type="text/javascript"></script>
-  <link href='images/favicon.ico' rel='shortcut icon'>
-
+  <link href='http://www.gopivotal.com/misc/favicon.ico' rel='shortcut icon'>
 </head>
 
-<body class="pivotalcf pivotalcf_index">
-<div class='wrap'>
-  <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
-  <script type="text/javascript">
-      try {
-          Typekit.load();
-      } catch (e) {
-      }
-  </script>
-  <script type="text/javascript">
-      document.domain = "gopivotal.com";
-  </script>
-  <header class="navbar desktop-only" id="nav">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <div class="pivotal-logo--container">
-                <a class="pivotal-logo" href="http://gopivotal.com"><span></span></a>
-            </div>
-
-            <ul class="nav pull-right">
-                <li class="navbar-link">
-                    <a href="http://www.gopivotal.com/paas" id="paas-nav-link">PaaS</a>
-                </li>
-                <li class="navbar-link">
-                    <a href="http://www.gopivotal.com/big-data" id="big-data-nav-link">BIG DATA</a>
-                </li>
-                <li class="navbar-link">
-                    <a href="http://www.gopivotal.com/agile" id="agile-nav-link">AGILE</a>
-                </li>
-                <li class="navbar-link">
-                    <a href="http://www.gopivotal.com/oss" id="oss-nav-link">OSS</a>
-                </li>
-                <li class="nav-search">
-                    <a href="http://www.gopivotal.com/search-pivotal"><span></span></a>
-                </li>
-            </ul>
+<body class="pivotalcf pivotalcf_getstarted pivotalcf_getstarted_index">
+  <div class="viewport">
+    <div class="mobile-navigation--wrapper mobile-only">
+      <div class="navigation-drawer--container">
+        <div class="navigation-item-list">
+          <div class="navbar-link active">
+            <a href="http://gopivotal.com">
+              Home
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/paas">
+              PaaS
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/big-data">
+              Big Data
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/agile">
+              Agile
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/support">
+              Help &amp; Support
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/products">
+              Products
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/solutions">
+              Solutions
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
+          <div class="navbar-link">
+            <a href="http://gopivotal.com/partners">
+              Partners
+              <i class="icon-chevron-right pull-right"></i>
+            </a>
+          </div>
         </div>
-        <a href="http://www.gopivotal.com/contact">
-            <img id="get-started" src="http://www.gopivotal.com/sites/all/themes/gopo13/images/get-started.png">
-        </a>
+      </div>
+      <div class="mobile-nav">
+        <div class="nav-icon js-open-nav-drawer">
+          <i class="icon-reorder"></i>
+        </div>
+        <div class="header-center-icon">
+          <a href="http://gopivotal.com">
+            <div class="icon icon-pivotal-logo-mobile"></div>
+          </a>
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="main-wrap">
-    <div class="container-fluid">
-      <div class="container">
-        <div id="navigation">
-			<!-- Collapsible left-navigation-->
+
+    <div class='wrap'>
+      <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
+      <script type="text/javascript">
+          try {
+              Typekit.load();
+          } catch (e) {
+          }
+      </script>
+      <script type="text/javascript">
+          document.domain = "gopivotal.com";
+      </script>
+      <div id="search-dropdown-box">
+        <div class="search-dropdown--container js-search-dropdown">
+          <div class="container-fluid">
+            <div class="close-menu-large"><img src="http://www.gopivotal.com/sites/all/themes/gopo13/images/icon-close.png" /></div>
+            <div class="search-form--container">
+              <div class="form-search">
+                <div class='gcse-search'></div>
+                <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+                <script src="javascripts/cse.js" type="text/javascript"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header class="navbar desktop-only" id="nav">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="pivotal-logo--container">
+                    <a class="pivotal-logo" href="http://gopivotal.com"><span></span></a>
+                </div>
+
+                <ul class="nav pull-right">
+                    <li class="navbar-link">
+                        <a href="http://www.gopivotal.com/paas" id="paas-nav-link">PaaS</a>
+                    </li>
+                    <li class="navbar-link">
+                        <a href="http://www.gopivotal.com/big-data" id="big-data-nav-link">BIG DATA</a>
+                    </li>
+                    <li class="navbar-link">
+                        <a href="http://www.gopivotal.com/agile" id="agile-nav-link">AGILE</a>
+                    </li>
+                    <li class="navbar-link">
+                        <a href="http://www.gopivotal.com/oss" id="oss-nav-link">OSS</a>
+                    </li>
+                    <li class="nav-search">
+                        <a class="js-search-input-open" id="click-to-search"><span></span></a>
+                    </li>
+                </ul>
+            </div>
+            <a href="http://www.gopivotal.com/contact">
+                <img id="get-started" src="http://www.gopivotal.com/sites/all/themes/gopo13/images/get-started.png">
+            </a>
+        </div>
+      </header>
+      <div class="main-wrap">
+        <div class="container-fluid">
+
+          <!-- Google CSE Search Box -->
+          <div id='docs-search'>
+              <gcse:search></gcse:search>
+          </div>
+          
+          <div id='all-docs-link'>
+            <a href="http://docs.gopivotal.com/">All Documentation</a>
+          </div>
+          
+          <div class="container">
+            <div id="sub-nav" class="nav-container">              
+              
+              <!-- Collapsible left-navigation-->
 			  <ul class="accordion"  id="accordion-1">
-				  <!-- REPLACE <li/> NODES -->
-				  <!-- START <li/> NODES HERE-->
+				  <!-- REPLACE <li/> NODES-->
+
                         <li>
-                <a href="index.html">PIVOTAL HD</a>
+                <a href="index.html">Pivotal HD</a>
 
                             <ul>
                     <li>
@@ -336,7 +429,7 @@
             </ul>
             </li>
                         <li>
-                <a href="PIVOTALADVANCEDDATABASESERVICES.html">PIVOTAL ADVANCED DATABASE SERVICES</a>
+                <a href="PivotalAdvancedDatabaseServices.html">Pivotal Advanced Database Services</a>
 
                             <ul>
                     <li>
@@ -459,33 +552,13 @@
             </li>
             </ul>
             </li>
+              </ul>        
+              
+            </div><!--end of sub-nav-->
+            <div class="body-container content">
 
-
-				  <!-- END <li/> NODES HERE-->
-
-            </ul>
-			  
-
-        </div>
-        <div class="body-container content">
-
-          <!-- Google CSE Search Box -->
-          <script>
-              (function() {
-                  var cx = '005804290371689664731:n1ix15a_ysy';
-                  var gcse = document.createElement('script');
-                  gcse.type = 'text/javascript';
-                  gcse.async = true;
-                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                          '//www.google.com/cse/cse.js?cx=' + cx;
-                  var s = document.getElementsByTagName('script')[0];
-                  s.parentNode.insertBefore(gcse, s);
-              })();
-          </script>
-          <gcse:search></gcse:search>
-          
-          <!-- Python script replaces main content -->
-		  <div id ="main"><h1>Installing PHD Using the CLI</h1><div class="wiki-content group" id="main-content">
+              <!-- Python script replaces main content -->
+			  <div id ="main"><h1>Installing PHD Using the CLI</h1><div class="wiki-content group" id="main-content">
 <p style="margin-left: 0.0px;">This section describes how to install and configure Pivotal HD using Pivotal Command Center's command line interface (CLI).</p><h2 id="InstallingPivotalHDEnterpriseUsingtheCLI-CommandLineInstallationFeatures" style="margin-left: 0.0px;">Command Line Installation Features</h2><p>Using Pivotal Command Center's CLI to install Pivotal HD provides the following functionality:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Feature</p></th><th class="confluenceTh"><p>Support</p></th></tr><tr><td class="confluenceTd"><p>Checking prerequisites</p></td><td class="confluenceTd"><ul><li>Checks that specified hosts meet the prerequisites to install the supported components.</li></ul></td></tr><tr><td class="confluenceTd"><p>Supported cluster services</p></td><td class="confluenceTd"><ul><li>Installs and configures Hadoop, YARN, ZooKeeper, HBase, Mahout, HAWQ, PXF, Hive, Pig, and USS with default settings.</li><li>Reconfigures the supported cluster services.</li><li>Multi-cluster support.</li><li>Monitors clusters with Pivotal Command Center (PCC).</li></ul></td></tr><tr><td class="confluenceTd"><p>Starting and stopping</p></td><td class="confluenceTd"><ul><li>Starts and stops the cluster or individual services.</li><li>Ensures that all dependent services start and stop in the correct order.</li></ul></td></tr><tr><td class="confluenceTd"><p>Logging</p></td><td class="confluenceTd"><ul><li>Provides installation data logs.</li></ul></td></tr><tr><td class="confluenceTd"><p>Uninstallation</p></td><td class="confluenceTd"><ul><li>Can uninstall individual services and Pivotal HD Enterprise.</li></ul></td></tr></tbody></table></div><h2 id="InstallingPivotalHDEnterpriseUsingtheCLI-PlanningyourPivotalHDClusterDeployment">Planning your Pivotal HD Cluster Deployment</h2><p>To deploy a Hadoop cluster, Pivotal recommends that you consider the following:</p><ul><li>Select the appropriate hardware configuration for cluster &amp; management nodes.</li><li>Map Hadoop services roles to cluster nodes.</li><li>Configure the roles to effectively leverage underlying hardware platform.</li></ul><p><span class="confluence-anchor-link" id="InstallingPivotalHDEnterpriseUsingtheCLI-DeploymentOptions"></span></p><h3 id="InstallingPivotalHDEnterpriseUsingtheCLI-DeploymentOptions">Deployment Options</h3><p>Pivotal HD 1.1 supports YARN (MR2) by default.  If you don't want to deploy a YARN-based cluster, we provide Hadoop MR1 as optional manually-installable software.</p> <div class="aui-message warning shadowed information-macro">
 <p class="title">MR1-based Clusters</p>
 <span class="aui-icon icon-warning"></span>
@@ -1160,61 +1233,50 @@ gpgkey=http://172.254.51.221/centos/$releasever/os/$basearch/RPM-GPG-KEY-CentOS-
 </div></div></li><li><p>Edit the Cluster Configuration file as follows: <br/> <br/> <strong>During initial deployment</strong>: Retrieve the <code>clusterConfig.xml</code> file using the <code>icm_client fetch-template</code> command.  See <a href="InstallingPHDUsingtheCLI.html#InstallingPivotalHDEnterpriseUsingtheCLI-ClusterConfigurationFiles">Cluster Configuration Files</a> for more details.</p><p><strong>Adding to an exiting cluster</strong>: Edit the <code>clusterConfig.xml</code> file (<code>icm_client fetch-configuration</code>) then reconfigure the cluster (<code>icm_client reconfigure</code>). See <a href="AdministeringPHDUsingtheCLI.html#AdministeringPivotalHDEnterpriseUsingtheCLI-Reconfiguring">Reconfiguring a Cluster</a>.</p><ul><li><p>Open <code>clusterConfig.xml</code> and add gfxd to the services listed in the &lt;services&gt;&lt;/services&gt; tag.</p></li><li style="color: rgb(0,0,0);"><p>Define the <code>gfxd-server</code> and <code>gfxd-locator</code> roles in the <code>clusterConfig.xml</code> file for every cluster by adding the following to the &lt;hostrolemapping&gt; <span style="color: rgb(0,0,0);">&lt;/hostrolemapping&gt;</span> tag:<code> <br/>&lt;gfxd&gt; <br/>   &lt;gfxd-locator&gt;host.yourdomain.com&lt;/gfxd-locator&gt;<br/>   &lt;gfxd-server&gt;host.yourdomain.com&lt;/gfxd-server&gt;<br/>&lt;/gfxd&gt;</code></p></li></ul></li></ol><h3 id="InstallingPivotalHDEnterpriseUsingtheCLI-TestingGemFireXD">Testing GemFire XD</h3><p>On one of the gfxd nodes, navigate to <code>/usr/lib/gphd/gfxd/examples/mapreduce</code> and follow instructions in the README.txt file.</p><h3 id="InstallingPivotalHDEnterpriseUsingtheCLI-ManagingGemFireXD">Managing GemFire XD</h3><p>Refer to the <em> <a class="external-link" href="http://gemfirexd-05.run.pivotal.io/index.jsp?topic=/com.pivotal.gemfirexd.0.5/getting_started/book_intro.html" rel="nofollow">Pivotal GemFire XD User's Guide</a>.</em></p><p>A<em> Quick Start Guide</em> that includes instructions for starting and stopping gfxd servers and locators is also available<em>, </em>here: <a class="external-link" href="http://gemfirexd-05.run.pivotal.io/index.jsp?topic=/com.pivotal.gemfirexd.0.5/getting_started/15-minutes.html" rel="nofollow">http://gemfirexd-05.run.pivotal.io/index.jsp?topic=/com.pivotal.gemfirexd.0.5/getting_started/15-minutes.html</a></p><p><span class="confluence-anchor-link" id="InstallingPivotalHDEnterpriseUsingtheCLI-InstallingSSLcertificates"></span></p><h2 id="InstallingPivotalHDEnterpriseUsingtheCLI-InstallingSSLcertificates">Installing SSL certificates</h2><p>The following table contains information related to SSL certificates:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Port</th><th class="confluenceTh">Used by</th><th class="confluenceTh">Default Certificate Path</th><th class="confluenceTh">Default Key Path</th><th class="confluenceTh">Configuration file</th><th class="confluenceTh">Post key change step</th><th class="confluenceTh">SSL Version</th><th class="confluenceTh">Compression</th><th class="confluenceTh">Minimal encryption strength</th><th class="confluenceTh">ICM Upgrade</th><th class="confluenceTh" colspan="1">Support CA signed certificates</th></tr><tr><td class="confluenceTd">443</td><td class="confluenceTd">Apache Default SSL</td><td class="confluenceTd">/etc/pki/tls/certs/localhost.crt</td><td class="confluenceTd">/etc/pki/tls/private/localhost.key</td><td class="confluenceTd">/etc/httpd/conf.d/ssl.conf</td><td class="confluenceTd">service httpd restart</td><td class="confluenceTd">SSLv3 TLSv1.0</td><td class="confluenceTd">No</td><td class="confluenceTd">medium encryption (56-bit)</td><td class="confluenceTd">No Impact</td><td class="confluenceTd" colspan="1">Yes</td></tr><tr><td class="confluenceTd">5443</td><td class="confluenceTd">Command Center UI</td><td class="confluenceTd">/usr/local/greenplum-cc/ssl/FQDN.cert</td><td class="confluenceTd">/usr/local/greenplum-cc/ssl/FQDN.key</td><td class="confluenceTd">/etc/httpd/conf.d/pcc-vhost.conf</td><td class="confluenceTd">service httpd restart</td><td class="confluenceTd">SSLv3 TLSv1.0</td><td class="confluenceTd">No</td><td class="confluenceTd">strong encryption (96-bit or more)</td><td class="confluenceTd">Check configuration file and key</td><td class="confluenceTd" colspan="1">Yes</td></tr><tr><td class="confluenceTd" colspan="1">8140</td><td class="confluenceTd" colspan="1">Puppet</td><td class="confluenceTd" colspan="1">/var/lib/puppet/ssl-icm/certs/FQDN.pem</td><td class="confluenceTd" colspan="1">/var/lib/puppet/ssl-icm/private_keys/FQDN.pem</td><td class="confluenceTd" colspan="1">/etc/httpd/conf.d/puppet-httpd.conf</td><td class="confluenceTd" colspan="1">service httpd restart</td><td class="confluenceTd" colspan="1">SSLv3 TLSv1.0</td><td class="confluenceTd" colspan="1">No</td><td class="confluenceTd" colspan="1">strong encryption (96-bit or more)</td><td class="confluenceTd" colspan="1">Check configuration file and key</td><td class="confluenceTd" colspan="1">No</td></tr></tbody></table></div><p> </p><p> </p>
 </div></div>
 
-        </div><!-- end of body-container content-->
-      </div><!-- end of container -->
-    </div><!--end of container-fluid-->
-  </div><!--end of main-wrap-->
 
-  <div class="site-footer desktop-only">
-      <div class="container-fluid">
-          <div class="site-footer-links">
-              <span class="version"><a href='/'>Pivotal Documentation</a></span>
-              <span>&copy;
-                  <script>
-                      var d = new Date();
-                      document.write(d.getFullYear());
-                  </script>
-                  <a href='http://gopivotal.com'>Pivotal Software</a> Inc. All Rights Reserved.
-              </span>
+            </div><!-- end of body-container content-->
+          </div><!-- end of container -->
+        </div><!--end of container-fluid-->
+      </div><!--end of main-wrap-->
+
+      <div class="site-footer desktop-only">
+          <div class="container-fluid">
+              <div class="site-footer-links">
+                  <span class="version"><a href='/'>Pivotal Documentation</a></span>
+                  <span>&copy;
+                      <script>
+                          var d = new Date();
+                          document.write(d.getFullYear());
+                      </script>
+                      <a href='http://gopivotal.com'>Pivotal Software</a> Inc. All Rights Reserved.
+                  </span>
+              </div>
           </div>
       </div>
-  </div>
 
-  <script type="text/javascript">
-      (function() {
-          var didInit = false;
-          function initMunchkin() {
-              if(didInit === false) {
-                  didInit = true;
-                  Munchkin.init('625-IUJ-009');
+      <script type="text/javascript">
+          (function() {
+              var didInit = false;
+              function initMunchkin() {
+                  if(didInit === false) {
+                      didInit = true;
+                      Munchkin.init('625-IUJ-009');
+                  }
               }
-          }
-          var s = document.createElement('script');
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
-          s.onreadystatechange = function() {
-              if (this.readyState == 'complete' || this.readyState == 'loaded') {
-                  initMunchkin();
-              }
-          };
-          s.onload = initMunchkin;
-          document.getElementsByTagName('head')[0].appendChild(s);
-      })();
-  </script>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39702075-1']);
-    _gaq.push(['_setDomainName', 'gopivotal.com']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+              s.onreadystatechange = function() {
+                  if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                      initMunchkin();
+                  }
+              };
+              s.onload = initMunchkin;
+              document.getElementsByTagName('head')[0].appendChild(s);
+          })();
+      </script>
+  </div><!--end of viewport-->
+  <div id="scrim"></div>
 </body>
 </html>
