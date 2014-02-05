@@ -16,38 +16,10 @@
 ;
 $(function () {
 
-    var normalizedCurrentUrl = normalizeUrl(window.location.pathname);
+    var page_name = window.location.pathname.substring(11);
 
-    function normalizeUrl(url) {
-        var match;
-        if (match = url.match("^(.*)index.html$")) {
-            return match[1];
-        } else {
-            return url;
-        }
-    }
+    $("#sub-nav .accordion .dcjq-parent-li a[href='" + page_name + "']").addClass("active");
 
-    function isCurrentPage(link) {
-        var originalLinkHref = link.attr('href').toString();
-        var normalizedLinkHref = normalizeUrl(originalLinkHref);
-
-        var currentLinkIsHome = link.attr('id') == "home-nav-link";
-        var windowLocationIsExactMatch = normalizedCurrentUrl == normalizedLinkHref;
-
-        if (currentLinkIsHome) {
-            if (windowLocationIsExactMatch) return true;
-        } else {
-            if (normalizedCurrentUrl.match("^" + normalizedLinkHref)) return true;
-        }
-        return false;
-    }
-
-    $('#sub-nav .js-maintopic a').each(function () {
-        var $thisLink = $(this);
-        if (isCurrentPage($thisLink)) {
-            $thisLink.attr('class', "active");
-        }
-    });
 
     // For main search
     $('#click-to-search').click(function () {

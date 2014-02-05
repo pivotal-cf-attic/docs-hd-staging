@@ -192,7 +192,7 @@ html {
 body {
     margin: 0 0 100px; /* bottom = footer height */
 	height: 100%;
-	font: normal 15px Arial, sans-serif;
+	font: normal 15px 'freight-sans-pro', sans-serif;
 }
 /* PPD - id t1 is the id for the page title */	
 #t1 {
@@ -207,7 +207,7 @@ font-size: medium;
 /* Pivotal */
 .content h1 {
     color: #3C3D42;
-    font-family: 'freight-sansp',sans-serif;
+    font-family: 'freight-sans-pro',sans-serif;
     font-size: 30px;
     font-weight: 100;
     line-height: 46px;
@@ -698,7 +698,7 @@ a.blogHeading {
     margin-left: 0;
     padding-left: 0;
     white-space: nowrap;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'freight-sans-pro', sans-serif;
     font-size: 14px;
     line-height: 20px;
 }
@@ -957,7 +957,7 @@ li[style*='text-align: right'] {
    #main selector is to prevent this rule applying within the RTE iframe.
    */
 #main .wiki-content .footer p, #main .wiki-content .footer a {
-  font-family: arial,sans-serif;
+  font-family: 'freight-sans-pro',sans-serif;
   font-size: 14px;
 }
 
@@ -2692,7 +2692,7 @@ a.blogHeading {
     margin-left: 0;
     padding-left: 0;
     white-space: nowrap;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'freight-sans-pro', sans-serif;
     font-size: 14px;
     line-height: 20px;
 }
