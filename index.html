@@ -58,6 +58,34 @@
     })();
 
     </script>
+
+    <!-- style for doc submenu, displayed under main search box; modified from http://cssmenumaker.com/  --> 
+<link href="/stylesheets/doc-submenu.css" rel="stylesheet" type="text/css" />
+
+ <!-- style for external link with base65 icon --> 
+  <style type="text/css">
+
+ a.external:after {
+    content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=");
+    margin: 0 0 0 5px; }
+    
+.gpdb a{
+font-size: 12px;
+}
+a.gpdb{
+font-size: 12px;
+}
+p.gpdb {
+font-size: 12pt;
+}
+    </style>
+    
+<!-- pdf icon after pdf links.
+     a[href$=".pdf"]:after {
+    content: url(images/pdf.png) ;
+    margin: 0 0 0 5px;
+-->    
+
 </head>
 
 <body class="pivotalhd pivotalhd_index">
@@ -152,7 +180,11 @@
 			var s = document.getElementsByTagName('script')[0];
 			s.parentNode.insertBefore(wf, s);
 		  })(); 
-	  </script>    
+	  </script>
+
+
+
+
       <div id="search-dropdown-box">
         <div class="search-dropdown--container js-search-dropdown">
           <div class="container-fluid">
@@ -208,15 +240,33 @@
           
           <div id='all-docs-link'>
             <a href="/">All Documentation</a>
+
+     <!-- doc submenu link nav -->
+     <div id='cssmenu'>
+     <ul>
+        <li class='has-sub'><a href="#" >Pivotal HD Documentation</a> |&nbsp;
+           <ul>
+              <li>Current Release</li>
+              <li><a href="http://docs.gopivotal.com/pivotalhd/1010/index.html">PHD 1.0.1/PCC 2.0.1/PADS 1.1.0</a></li>
+              <li><a href="http://docs.gopivotal.com/pivotalhd/1100/index.html">PHD 1.1.0/PCC 2.1.0/PADS 1.1.3</a></li>
+           </ul>
+        </li>
+        <li><a href="http://pivotalhd.docs.gopivotal.com/index.html">Tutorial</a> |&nbsp;</li>
+        <li><a href="http://ask.gopivotal.com/hc/en-us/categories/200072578-Pivotal-HD-Knowledge-Base">Knowledge Base</a> |&nbsp;</li>
+        <li><a href="http://ask.gopivotal.com/hc/communities/public/topics/200053048-Pivotal-HD-General">Forum</a></li>
+     </ul>
+     </div>
+     <!-- End doc submenu link nav -->
+
+
           </div>
             <div class="container">
 
-
+		
 <h3 class="title-container">Pivotal HD Documentation</h3>
 
-            <div class="content">
-
 <!-- begin product -->
+            <div class="content">
 <h2 id="pivotalhd">Pivotal HD Enterprise 1.1.1</h2>
 
 <!--Pivotal HD 1.1.1 docs -->
@@ -364,11 +414,7 @@
 
 <h2 id="otherresources">Other Resources</h2>
 
-         <h4><a href="http://pivotalhd.docs.gopivotal.com/index.html">Tutorial</a></h4>                                 
-         <h4><a href="http://ask.gopivotal.com/hc/en-us/categories/200072578-Pivotal-HD-Knowledge-Base">Knowledge Base</a></h4>                                 
-         <h4><a href="http://ask.gopivotal.com/hc/communities/public/topics/200053048-Pivotal-HD-General">Forum</a></h4>                                 
          <h4><a href="http://www.gopivotal.com/sites/default/files/Hawq_WP_042313_FINAL.pdf" target="_blank">HAWQ White Paper (PDF)</a></h4>
-
 
             </div><!-- end of content-->
           </div><!-- end of container -->
