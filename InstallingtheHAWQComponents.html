@@ -158,7 +158,7 @@
               <div class="form-search">
                 <div class='gcse-search'></div>
                 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-                <script src="//javascripts/cse.js" type="text/javascript"></script>
+                <script src="/javascripts/cse.js" type="text/javascript"></script>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
           </div>
           
           <div id='all-docs-link'>
-            <a href="/">All Documentation</a>
+            <a href="http://docs.gopivotal.com/">All Documentation</a>
           </div>
           
           <div class="container">
@@ -213,9 +213,9 @@
               <!-- Collapsible left-navigation-->
 				<ul class="accordion"  id="accordion-1">
 					<!-- REPLACE <li/> NODES-->
-                                  <li>
+                        <li>
                 <a href="index.html">Home</a></br>
-                        </li>
+                                
                         <li>
                 <a href="PivotalHD.html">Pivotal HD 2.0.1</a>
 
@@ -536,9 +536,7 @@
                 <a href="PXFExternalTableandAPIReference.html">PXF External Table and API Reference</a>
 
                     </li>
-
-              </ul>
-                                    
+            </ul>
             </div><!--end of sub-nav-->
             
             <h3 class="title-container">Installing the HAWQ Components</h3>
@@ -546,11 +544,11 @@
               <!-- Python script replaces main content -->
 			  <div id ="main"><div style="visibility:hidden; height:2px;">Pivotal Product Documentation : Installing the HAWQ Components</div><div class="wiki-content group" id="main-content">
 <p>This chapter describes how to install additional HAWQ components.</p><p><style type="text/css">/*<![CDATA[*/
-div.rbtoc1398914626452 {padding: 0px;}
-div.rbtoc1398914626452 ul {list-style: disc;margin-left: 0px;}
-div.rbtoc1398914626452 li {margin-left: 0px;padding-left: 0px;}
+div.rbtoc1400035791132 {padding: 0px;}
+div.rbtoc1400035791132 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1400035791132 li {margin-left: 0px;padding-left: 0px;}
 
-/*]]>*/</style><div class="toc-macro rbtoc1398914626452">
+/*]]>*/</style><div class="toc-macro rbtoc1400035791132">
 <ul class="toc-indentation">
 <li><a href="#InstallingtheHAWQComponents-InstallingCryptographicFunctionsforPostgreSQL">Installing Cryptographic Functions for PostgreSQL</a>
 <ul class="toc-indentation">
@@ -584,12 +582,12 @@ div.rbtoc1398914626452 li {margin-left: 0px;padding-left: 0px;}
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">mkdir pgcrypto
 mv pgcrypto.tgz pgcrypto
 tar -xzvf pgcryto/pgcrypto.tgz</pre>
-</div></div><p>2. Run pgcrypto_install.sh script with the hostfile as argument. The hosts file must contain hostname of each segment, one per line.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p> </p><p>2. Run pgcrypto_install.sh script with the hostfile as argument. The hosts file must contain hostname of each segment, one per line.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">cd pgcrypto
 ./pgcrypto_install.sh -f ~/hostfile</pre>
 </div></div><p><span>3. Install the pgcrypto function:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: sql; gutter: false" style="font-size:12px;">psql -d &lt;dbname&gt; -f $GPHOME/share/postgresql/contrib/pgcrypto.sql </pre>
-</div></div><h4 id="InstallingtheHAWQComponents-Uninstallingpgcrypto"><span>Uninstalling pgcrypto</span></h4><p>To uninstall the pgcrypto objects, use uninstall_pgcrypto.sql.</p> <div class="aui-message warning shadowed information-macro">
+</div></div><h4 id="InstallingtheHAWQComponents-Uninstallingpgcrypto">Uninstalling pgcrypto</h4><p>To uninstall the pgcrypto objects, use uninstall_pgcrypto.sql.</p> <div class="aui-message warning shadowed information-macro">
 <p class="title">Note:</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
@@ -615,7 +613,7 @@ tar -xzf plr*.tgz -C plr</pre>
 gpstop -ar</pre>
 </div></div><p>4. Create the plr language. Connect to a database using PSQL and run the following SQL command. </p><div class="line number1 index0 alt2"><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">psql -d template1 -c "CREATE LANGUAGE plr"</pre>
-</div></div><p> You are now ready to create new PLR functions. A library of convenient PLR functions may be found in $GPHOME/share/postgresql/contrib/plr.sql. These functions may be installed by executing plr.sql, as follows:</p></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p style="margin-left: 30.0px;"> You are now ready to create new PLR functions. A library of convenient PLR functions may be found in $GPHOME/share/postgresql/contrib/plr.sql. These functions may be installed by executing plr.sql, as follows:</p></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">psql -d &lt;dbname&gt; -f $GPHOME/share/postgresql/contrib/plr.sql</pre>
 </div></div><h3 id="InstallingtheHAWQComponents-InstallingPL/Java">Installing PL/Java</h3> <div class="aui-message warning shadowed information-macro">
 <p class="title">Notes</p>
@@ -631,11 +629,11 @@ cd pljava
 tar -xzf pljava.tgz</pre>
 </div></div></li><li><p>Run the installer.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">./pljava_install.sh -f ~/hosts.txt </pre>
-</div></div><p><br/>Where the ~/hosts.txt  file contains the names of currently active segment hosts in the HAWQ deployment. You must format the file to list one hostname per line.</p></li><li><p>Restart HAWQ.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>Where the ~/hosts.txt  file contains the names of currently active segment hosts in the HAWQ deployment. You must format the file to list one hostname per line.</p></li><li><p>Restart HAWQ.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">source $GPHOME/greenplum_path.sh gpstop -ar</pre>
 </div></div></li><li><p>Add the pljava class of configuration variables:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">gpconfig -c custom_variable_classes -v \'pljava\' </pre>
-</div></div><p><br/>To add previously defined custom_variable_classes, prefix them with "pljava" in a comma separated list.</p></li><li><p>Create the language for pljava.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>To add previously defined custom_variable_classes, prefix them with "pljava" in a comma separated list.</p></li><li><p>Create the language for pljava.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">psql -d &lt;dbname&gt; -c "CREATE LANGUAGE pljava"</pre>
 </div></div></li></ol><h4 id="InstallingtheHAWQComponents-InstallingCustomJARS">Installing Custom JARS </h4><ol><li>Copy the jar file on the master host in $GPHOME/lib/postgresql/java</li><li><p>Copy the jar file on all segments in the same location using gpscp from master.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">cd $GPHOME/lib/postgresql/java gpscp -f ~/hosts.txt myfunc.jar =:$GPHOME/lib/postgresql/java/</pre>
@@ -643,20 +641,20 @@ tar -xzf pljava.tgz</pre>
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">pljava_classpath='myfunc.jar';</pre>
 </div></div></li><li><p>To affect all sessions: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">gpconfig -c pljava_classpath -v \'myfunc.jar\'</pre>
-</div></div></li></ol></li></ol><h2 id="InstallingtheHAWQComponents-InstallingMADlibonHAWQ">Installing MADlib on HAWQ</h2><p>The MADlib library adds statistical and machine learning functionality to HAWQ. This topic describes how to install MADlib for HAWQ. </p><p>The HAWQ installation script installs<span> the MADlib files, but does not register MADlib functions with HAWQ databases. Therefore you must use the </span><code>madpack</code> utility program to install, reinstall, or upgrade the MADlib database objects.</p> <div class="aui-message warning shadowed information-macro">
+</div></div></li></ol></li></ol><h2 id="InstallingtheHAWQComponents-InstallingMADlibonHAWQ">Installing MADlib on HAWQ</h2><p>The MADlib library adds statistical and machine learning functionality to HAWQ. This topic describes how to install MADlib for HAWQ. </p><p>The HAWQ installation script installs the MADlib files, but does not register MADlib functions with HAWQ databases. Therefore you must use the <code>madpack</code> utility program to install, reinstall, or upgrade the MADlib database objects.</p> <div class="aui-message warning shadowed information-macro">
 <p class="title">Upgrading HAWQ from 1.1 to 1.2</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
 <p>If you have upgraded your system from HAWQ 1.1.x to HAWQ 1.2, you must install MADlib 1.5 or higher and then run the <code>madpack</code> utility program.</p>
 </div>
 </div>
-<h3 id="InstallingtheHAWQComponents-Pre-requisitesforInstallingMADlibonHAWQ"><span style="color: rgb(0,102,0);">Pre-requisites for Installing MADlib on HAWQ</span></h3><p>Check that you have completed the following tasks before running the installation script: </p><ul><li>Make sure you have <code>rpm</code>, <code>gpssh</code> and <code>gpscp</code> in your <code>PATH</code>. </li><li>Make sure that you have HAWQ binaries installed properly on all master and segment nodes in your cluster (also new segment nodes when adding new nodes).</li><li><span style="line-height: 1.4285715;">Add </span><code style="line-height: 1.4285715;">hawq_install.sh</code><span style="line-height: 1.4285715;"> to your </span><code style="line-height: 1.4285715;">PATH</code><span style="line-height: 1.4285715;">.</span></li><li>Make sure the <code>HOSTFILE</code> lists all the new segment nodes.</li></ul><h3 id="InstallingtheHAWQComponents-InstallingMADlibonHAWQ.1">Installing MADlib on HAWQ</h3><ol><li><p>Once HAWQ installation is complete, run the following command to install MADlib:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<h3 id="InstallingtheHAWQComponents-Pre-requisitesforInstallingMADlibonHAWQ">Pre-requisites for Installing MADlib on HAWQ</h3><p>Check that you have completed the following tasks before running the installation script: </p><ul><li>Make sure you have <code>rpm</code>, <code>gpssh</code> and <code>gpscp</code> in your <code>PATH</code>. </li><li>Make sure that you have HAWQ binaries installed properly on all master and segment nodes in your cluster (also new segment nodes when adding new nodes).</li><li><span style="line-height: 1.4285715;">Add </span> <code style="line-height: 1.4285715;">hawq_install.sh</code> <span style="line-height: 1.4285715;"> to your </span> <code style="line-height: 1.4285715;">PATH</code> <span style="line-height: 1.4285715;">.</span></li><li>Make sure the <code>HOSTFILE</code> lists all the new segment nodes.</li></ul><h3 id="InstallingtheHAWQComponents-InstallingMADlibonHAWQ.1">Installing MADlib on HAWQ</h3><ol><li><p>Once HAWQ installation is complete, run the following command to install MADlib:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">hawq_install.sh -r &lt;RPM_FILEPATH&gt; -f &lt;HOSTFILE&gt; [-s] [-d &lt;GPHOME&gt;] [--prefix &lt;MADLIB_INSTALL_PATH&gt;]</pre>
 </div></div></li><li><p>Run the following command to register MADlib in your database:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">$GPHOME/madlib/bin/madpack -p hawq -c $USER@$HOST/$DATABASE install</pre>
 </div></div></li><li><p>To test your installation, run the following command:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">$GPHOME/madlib/bin/madpack -p hawq -c $USER@$HOST/$DATABASE install-check</pre>
-</div></div></li></ol><h4 id="InstallingtheHAWQComponents-MADlibInstallRequiredSettings">MADlib Install Required Settings</h4><ul><li><code>-r | --rpm-path &lt;RPM_FILEPATH&gt; </code> The p<span style="color: rgb(0,0,0);">ath to the MADlib RPM file.</span></li><li><code>-f | --host-file &lt;HOSTFILE&gt;</code> The f<span style="color: rgb(0,0,0);">ile containing the host names of all new segments.</span></li></ul><h4 id="InstallingtheHAWQComponents-MADlibInstallOptionalSettings"><span style="color: rgb(0,0,0);"><span style="color: rgb(0,102,0);">MADlib Install Optional Settings</span></span></h4><ul><li><code>-s | --skip-localhost</code>  Set this option to prevent MADlib installation on the <span>localhost.</span><code><span style="color: rgb(0,0,0);">  </span></code></li><li><code><span style="color: rgb(0,0,0);">-d | --set-gphome &lt;GPHOME&gt;</span></code> Indicates the <span style="color: rgb(0,0,0);">HAWQ installation path. If you do not specify one, the installer uses the value stored in </span><span style="color: rgb(0,0,0);">the environment variable <code>GPHOME</code>.</span></li><li><code>--prefix &lt;MADLIB_INSTALL_PATH&gt; </code> Indicates <span style="color: rgb(0,0,0);">MADlib installation path. If not set, will use the default value </span><span style="color: rgb(0,0,0);">in MADlib RPM.</span></li><li><code>-h | -? | --help</code> <span style="color: rgb(0,0,0);">Displays help.</span></li></ul><h4 id="InstallingtheHAWQComponents-MADlibInstallExample">MADlib Install Example</h4><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ol><h4 id="InstallingtheHAWQComponents-MADlibInstallRequiredSettings">MADlib Install Required Settings</h4><ul><li><code>-r | --rpm-path &lt;RPM_FILEPATH&gt; </code> The p<span style="color: rgb(0,0,0);">ath to the MADlib RPM file.</span></li><li><code>-f | --host-file &lt;HOSTFILE&gt;</code> The f<span style="color: rgb(0,0,0);">ile containing the host names of all new segments.</span></li></ul><h4 id="InstallingtheHAWQComponents-MADlibInstallOptionalSettings"><span style="color: rgb(0,0,0);"> <span style="color: rgb(0,102,0);">MADlib Install Optional Settings</span> </span></h4><ul><li><code>-s | --skip-localhost</code>  Set this option to prevent MADlib installation on the <span>localhost.</span> <code> <span style="color: rgb(0,0,0);">  </span> </code></li><li><code> <span style="color: rgb(0,0,0);">-d | --set-gphome &lt;GPHOME&gt;</span> </code> Indicates the <span style="color: rgb(0,0,0);">HAWQ installation path. If you do not specify one, the installer uses the value stored in </span> <span style="color: rgb(0,0,0);">the environment variable <code>GPHOME</code>.</span></li><li><code>--prefix &lt;MADLIB_INSTALL_PATH&gt; </code> Indicates <span style="color: rgb(0,0,0);">MADlib installation path. If not set, will use the default value </span> <span style="color: rgb(0,0,0);">in MADlib RPM.</span></li><li><code>-h | -? | --help</code> <span style="color: rgb(0,0,0);">Displays help.</span></li></ul><h4 id="InstallingtheHAWQComponents-MADlibInstallExample">MADlib Install Example</h4><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">hawq_install.sh -r /home/gpadmin/madlib/madlib-1.5-Linux.rpm -f /usr/local/greenplum-db/hostfile</pre>
 </div></div>
 </div></div>

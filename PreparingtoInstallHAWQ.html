@@ -158,7 +158,7 @@
               <div class="form-search">
                 <div class='gcse-search'></div>
                 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-                <script src="//javascripts/cse.js" type="text/javascript"></script>
+                <script src="/javascripts/cse.js" type="text/javascript"></script>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
           </div>
           
           <div id='all-docs-link'>
-            <a href="/">All Documentation</a>
+            <a href="http://docs.gopivotal.com/">All Documentation</a>
           </div>
           
           <div class="container">
@@ -213,9 +213,9 @@
               <!-- Collapsible left-navigation-->
 				<ul class="accordion"  id="accordion-1">
 					<!-- REPLACE <li/> NODES-->
-                                  <li>
+                        <li>
                 <a href="index.html">Home</a></br>
-                        </li>
+                                
                         <li>
                 <a href="PivotalHD.html">Pivotal HD 2.0.1</a>
 
@@ -536,9 +536,7 @@
                 <a href="PXFExternalTableandAPIReference.html">PXF External Table and API Reference</a>
 
                     </li>
-
-              </ul>
-                                    
+            </ul>
             </div><!--end of sub-nav-->
             
             <h3 class="title-container">Preparing to Install HAWQ</h3>
@@ -546,11 +544,11 @@
               <!-- Python script replaces main content -->
 			  <div id ="main"><div style="visibility:hidden; height:2px;">Pivotal Product Documentation : Preparing to Install HAWQ</div><div class="wiki-content group" id="main-content">
 <p>This document describes how you can install HAWQ manually. HAWQ can be installed along with Pivotal HD Enterprise using the Command-Line Interface (CLI). However, if you choose to not install HAWQ using the CLI, then you need to follow the instructions in this chapter.</p><p><style type="text/css">/*<![CDATA[*/
-div.rbtoc1398914625895 {padding: 0px;}
-div.rbtoc1398914625895 ul {list-style: disc;margin-left: 0px;}
-div.rbtoc1398914625895 li {margin-left: 0px;padding-left: 0px;}
+div.rbtoc1400035790716 {padding: 0px;}
+div.rbtoc1400035790716 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1400035790716 li {margin-left: 0px;padding-left: 0px;}
 
-/*]]>*/</style><div class="toc-macro rbtoc1398914625895">
+/*]]>*/</style><div class="toc-macro rbtoc1400035790716">
 <ul class="toc-indentation">
 <li><a href="#PreparingtoInstallHAWQ-Pre-installation">Pre-installation</a></li>
 <li><a href="#PreparingtoInstallHAWQ-SystemRequirements">System Requirements</a></li>
@@ -570,7 +568,7 @@ div.rbtoc1398914625895 li {margin-left: 0px;padding-left: 0px;}
 <p>These tasks should be performed for <em>all</em> hosts in your HAWQ array (master, standby master and segments).</p>
 </div>
 </div>
-<h2 id="PreparingtoInstallHAWQ-SystemRequirements">System Requirements</h2><p align="LEFT">Check that you meet the following system requirements before you install HAWQ:</p><p align="LEFT"><strong>Operating System:</strong></p><ul><li>RedHat 6.4 and 6.2, 64 bit</li><li>CentOS 6.4 and 6.2, 64 bit</li></ul><p align="LEFT"><strong>Minimum CPU:</strong> Pentium Pro compatible (P3/Athlon and above)</p><p align="LEFT"><strong>Minimum Memory: </strong>16 GB RAM per server</p><p align="LEFT"><strong>Disk Requirements:</strong></p><ul><li>150MB per host for Greenplum installation</li><li>Approximately 300MB per segment instance for meta data</li><li>Appropriate free space for data: disks should have at least 30% free space (no more than 70% capacity)</li><li>High-speed, local storage</li></ul><p align="LEFT"><strong>Network Requirements:</strong></p><ul><li>Gigabit Ethernet within the array</li><li>Dedicated, non-blocking switch</li></ul><p align="LEFT"><strong>Software and Utilities:</strong> bash shell, GNU tar, and GNU zip</p><h2 id="PreparingtoInstallHAWQ-PreparingHDFS">Preparing HDFS</h2><p align="LEFT">You need to complete the following steps to configure HDFS:</p><ol><li><p>Download the HDFS binaries. See the <em>Pivotal HD Enterprise Installation and Administrator Guide</em> for more information.</p></li><li>Install the rpms. See the <em>Pivotal HD Enterprise Installation and Administrator Guide</em> for more information.</li><li><p>To make sure HDFS block files can be read by other users, configure OS file system umask to 022.</p></li><li>Start up the HDFS service. See the <em>Pivotal HD Stack and Tool Reference Guide</em> for more information.</li><li><p>Add the following line into ${HADOOP_HOME}/etc/hadoop/hadoop-env.sh</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<h2 id="PreparingtoInstallHAWQ-SystemRequirements">System Requirements</h2><p align="LEFT">Check that you meet the following system requirements before you install HAWQ:</p><p align="LEFT"><strong>Operating System:</strong></p><ul><li>RedHat 6.4 and 6.2, 64 bit</li><li>CentOS 6.4 and 6.2, 64 bit</li></ul><p align="LEFT"><strong>Minimum CPU:</strong> Pentium Pro compatible (P3/Athlon and above)</p><p align="LEFT"><strong>Minimum Memory: </strong>16 GB RAM per server</p><p align="LEFT"><strong>Disk Requirements:</strong></p><ul><li>150MB per host for Greenplum installation</li><li>Approximately 300MB per segment instance for meta data</li><li>Appropriate free space for data: disks should have at least 30% free space (no more than 70% capacity)</li><li>High-speed, local storage</li></ul><p align="LEFT"><strong>Network Requirements:</strong></p><ul><li>Gigabit Ethernet within the array</li><li>Dedicated, non-blocking switch</li></ul><p align="LEFT"><strong>Software and Utilities:</strong> bash shell, GNU tar, and GNU zip</p><h2 id="PreparingtoInstallHAWQ-PreparingHDFS">Preparing HDFS</h2><p align="LEFT">You need to complete the following steps to configure HDFS:</p><ol><li>Download the HDFS binaries. See the <em>Pivotal HD Enterprise Installation and Administrator Guide</em> for more information.</li><li>Install the rpms. See the <em>Pivotal HD Enterprise Installation and Administrator Guide</em> for more information.</li><li>To make sure HDFS block files can be read by other users, configure OS file system umask to 022.</li><li>Start up the HDFS service. See the <em>Pivotal HD Stack and Tool Reference Guide</em> for more information.</li><li><p>Add the following line into ${HADOOP_HOME}/etc/hadoop/hadoop-env.sh</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">umask 022 </pre>
 </div></div></li><li><p>Add the following parameter to hdfs-site.xml</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;   

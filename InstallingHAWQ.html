@@ -158,7 +158,7 @@
               <div class="form-search">
                 <div class='gcse-search'></div>
                 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-                <script src="//javascripts/cse.js" type="text/javascript"></script>
+                <script src="/javascripts/cse.js" type="text/javascript"></script>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
           </div>
           
           <div id='all-docs-link'>
-            <a href="/">All Documentation</a>
+            <a href="http://docs.gopivotal.com/">All Documentation</a>
           </div>
           
           <div class="container">
@@ -213,9 +213,9 @@
               <!-- Collapsible left-navigation-->
 				<ul class="accordion"  id="accordion-1">
 					<!-- REPLACE <li/> NODES-->
-                                  <li>
+                        <li>
                 <a href="index.html">Home</a></br>
-                        </li>
+                                
                         <li>
                 <a href="PivotalHD.html">Pivotal HD 2.0.1</a>
 
@@ -536,9 +536,7 @@
                 <a href="PXFExternalTableandAPIReference.html">PXF External Table and API Reference</a>
 
                     </li>
-
-              </ul>
-                                    
+            </ul>
             </div><!--end of sub-nav-->
             
             <h3 class="title-container">Installing HAWQ</h3>
@@ -546,11 +544,11 @@
               <!-- Python script replaces main content -->
 			  <div id ="main"><div style="visibility:hidden; height:2px;">Pivotal Product Documentation : Installing HAWQ</div><div class="wiki-content group" id="main-content">
 <p>This section contains procedures to help you install HAWQ.</p><p><style type="text/css">/*<![CDATA[*/
-div.rbtoc1398914626220 {padding: 0px;}
-div.rbtoc1398914626220 ul {list-style: disc;margin-left: 0px;}
-div.rbtoc1398914626220 li {margin-left: 0px;padding-left: 0px;}
+div.rbtoc1400035790979 {padding: 0px;}
+div.rbtoc1400035790979 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1400035790979 li {margin-left: 0px;padding-left: 0px;}
 
-/*]]>*/</style><div class="toc-macro rbtoc1398914626220">
+/*]]>*/</style><div class="toc-macro rbtoc1400035790979">
 <ul class="toc-indentation">
 <li><a href="#InstallingHAWQ-InstalltheHAWQBinaries">Install the HAWQ Binaries</a>
 <ul class="toc-indentation">
@@ -589,29 +587,29 @@ sdw3</pre>
 hawq-dev-dev.x86_64.rpm =:~/</pre>
 </div></div></li><li><p>Run the following command to install HAWQ to all hosts:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># gpssh -f hostfile -e "rpm -ivh hawq-dev-dev.x86_64.rpm"</pre>
-</div></div></li></ol><p><strong><span style="line-height: 1.5625;">To Install from a Binary Tarball</span></strong></p><ol><li><p>Log in to the master host as root.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ol><p><strong>To Install from a Binary Tarball</strong></p><ol><li><p>Log in to the master host as root.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> # su - root</pre>
 </div></div></li><li><p>Copy the HAWQ tarball to the binary directory you want to install HAWQ, go to the binary directory and uncompress the tarball. For example:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># cp /path/to/hawq-dev-dev.tar.gz /usr/local
 # cd /usr/local
 # tar xf hawq-dev-dev.tar.gz</pre>
-</div></div><p>A HAWQ directory is generated.</p><p><span style="line-height: 1.4285;background-color: transparent;"> <br/> </span></p></li><li><p>Open the file <em>/usr/local/greenplum_path.sh</em> and edit the <em>GPHOME</em> parameter to set it to <em>/usr/local/hawq .</em></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>A HAWQ directory is generated.</p></li><li><p>Open the file <em>/usr/local/greenplum_path.sh</em> and edit the <em>GPHOME</em> parameter to set it to <em>/usr/local/hawq .</em></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> GPHOME=/usr/local/hawq</pre>
 </div></div></li><li><p>Source the path file from your master host’s HAWQ installation directory:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> # source /usr/local/hawq/greenplum_path.sh</pre>
-</div></div><p><br/> <span style="line-height: 1.4285;">Create a file called </span> <em style="line-height: 1.4285;">hosttfile</em> <span style="line-height: 1.4285;"> that includes host names used in your HAWQ system in segment hosts format. Make sure there are no blank lines or extra spaces. For example, if you have a standby mnaster and three segments per host, your file will look something like this:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Create a file called <em style="line-height: 1.4285;">hosttfile</em> that includes host names used in your HAWQ system in segment hosts format. Make sure there are no blank lines or extra spaces. For example, if you have a standby mnaster and three segments per host, your file will look something like this:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">smdw
 sdw1
 sdw2
 sdw3</pre>
-</div></div><p><span style="line-height: 1.4285;"> <br/> </span></p></li><li><p><span style="line-height: 1.4285;">Perform the </span> <em style="line-height: 1.4285;">ssh</em> <span style="line-height: 1.4285;"> key exchange by running the following command. This allows you to log in to </span> <em style="line-height: 1.4285;">all_hosts</em> <span style="line-height: 1.4285;"> as root </span> <em style="line-height: 1.4285;">user</em> <span style="line-height: 1.4285;"> without a password prompt. Use the </span> <em style="line-height: 1.4285;">all_hosts</em> <span style="line-height: 1.4285;"> file you used for installation:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Perform the <em style="line-height: 1.4285;">ssh</em> key exchange by running the following command. This allows you to log in to <em style="line-height: 1.4285;">all_hosts</em> as root <em style="line-height: 1.4285;">user</em> without a password prompt. Use the <em style="line-height: 1.4285;">all_hosts</em> file you used for installation:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> # gpssh-exkeys -f all_hosts
 
 </pre>
-</div></div><p><span style="line-height: 1.4285;"> <br/> </span></p></li><li><p><span style="line-height: 1.4285;">Run the following commands to reference the hostfile file you just created and copy the HAWQ binary directory (</span> <em style="line-height: 1.4285;">/usr/local/hawq-dev</em> <span style="line-height: 1.4285;">) to all hosts:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Run the following commands to reference the hostfile file you just created and copy the HAWQ binary directory (<em style="line-height: 1.4285;">/usr/local/hawq-dev</em> <span style="line-height: 1.4285;">) to all hosts:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># gpscp -r -f hostfile hawq-dev =:/usr/local/
 # gpssh -f hostfile -e "ln -s  /usr/local/hawq-dev /usr/local/hawq"</pre>
-</div></div><p><span style="line-height: 1.4285;"> <br/></span></p></li></ol><h3 id="InstallingHAWQ-CreatingthegpadminUser">Creating the gpadmin User</h3><ol><li><p>Create the <em>gpadmin</em> user account on each host:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ol><h3 id="InstallingHAWQ-CreatingthegpadminUser">Creating the gpadmin User</h3><ol><li><p>Create the <em>gpadmin</em> user account on each host:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># gpssh -f all_hosts -e '/usr/sbin/useradd gpadmin’ 
 # gpssh –f all_hosts -e 'echo -e "changeme\nchangeme" | passwd gpadmin'</pre>
 </div></div></li><li><p>Log in to the master host as <em>gpadmin</em>:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -620,11 +618,11 @@ sdw3</pre>
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> $ source /usr/local/hawq/greenplum_path.sh</pre>
 </div></div></li><li><p>Run the following command to do the <em>ssh</em> key exchange to enable you to log in to all hosts without a password prompt as <em>gpadmin</em> user. Use the <em>all_hosts</em> file you used for installation:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> $ gpssh-exkeys -f all_hosts</pre>
-</div></div></li><li><p><span style="line-height: 1.4285;">Use the </span> <em style="line-height: 1.4285;">gpssh</em> <span style="line-height: 1.4285;"> utility to add the above command line to the profile file. For example:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Use the <em style="line-height: 1.4285;">gpssh</em> utility to add the above command line to the profile file. For example:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> $ gpssh -f all_hosts -e "echo source /usr/local/ hawq/greenplum_path.sh &gt;&gt; .bashrc"
 
 </pre>
-</div></div><p><span style="line-height: 1.4285;"> <br/> </span></p></li><li><p><span style="line-height: 1.4285;">Use the </span> <em style="line-height: 1.4285;">gpssh</em> <span style="line-height: 1.4285;"> utility to confirm that the Pivotal software was installed on all hosts. Use the </span> <em style="line-height: 1.4285;">all_hosts</em> <span style="line-height: 1.4285;"> file you used for installation. For example:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p><span style="line-height: 1.4285;"> <br/> </span></p></li><li><p>Use the <em style="line-height: 1.4285;">gpssh</em> utility to confirm that the Pivotal software was installed on all hosts. Use the <em style="line-height: 1.4285;">all_hosts</em> file you used for installation. For example:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> $ gpssh -f all_hosts -e "ls -l $GPHOME" </pre>
 </div></div> <div class="aui-message warning shadowed information-macro">
 <p class="title">Note:</p>
@@ -635,7 +633,7 @@ sdw3</pre>
 </div>
 </li><li><p><span style="font-size: small;"> </span>Log in to the master host as <em>root</em>:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> $ su - root</pre>
-</div></div></li></ol><h3 id="InstallingHAWQ-SettingtheOSParameters"><a name="RTF35373737323a204865616432" rel="nofollow"></a>Setting the OS Parameters</h3><p align="LEFT">This topic describes the OS parameter options that you need to set up for the following:</p><ul><li>Linux</li><li>RHEL</li><li>Security Configuration</li><li>XFS</li></ul><h4 id="InstallingHAWQ-Linux"><a name="RTF35343732343a20426f64793a" rel="nofollow"></a>Linux</h4> <div class="aui-message warning shadowed information-macro">
+</div></div></li></ol><h3 id="InstallingHAWQ-SettingtheOSParameters">Setting the OS Parameters</h3><p align="LEFT">This topic describes the OS parameter options that you need to set up for the following:</p><ul><li>Linux</li><li>RHEL</li><li>Security Configuration</li><li>XFS</li></ul><h4 id="InstallingHAWQ-Linux">Linux</h4> <div class="aui-message warning shadowed information-macro">
 <p class="title">Note:</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
@@ -697,7 +695,7 @@ net.core.wmem_max=2097152</pre>
 hard nofile 2900000
 soft nproc 131072
 hard nproc 131072</pre>
-</div></div><p align="LEFT"> </p><h4 id="InstallingHAWQ-XFS"><a name="RTF39373636343a20426f64793a" rel="nofollow"></a>XFS</h4><p align="LEFT">XFS is the preferred file system on Linux platforms for data storage. Pivotal recommends the following xfs mount options:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p align="LEFT"> </p><h4 id="InstallingHAWQ-XFS">XFS</h4><p align="LEFT">XFS is the preferred file system for data storage on Linux platforms. Pivotal recommends the following xfs mount options:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">rw,noatime,inode64,allocsize=16m</pre>
 </div></div><p align="LEFT"><span style="color: rgb(0,0,0);">You need to change the <span style="color: rgb(0,0,0);">allocsize to 64k, </span>only in the case of the master and the standby. To do so, change the allocsize to 64k in the /etc/fstab file. Run the following commands:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> sudo umount -l /path/to/filesystem 
@@ -714,14 +712,14 @@ sudo mount /path/to/filesystem</pre>
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> # /sbin/blockdev --setra bytes devname</pre>
 </div></div><p align="LEFT" style="margin-left: 30.0px;">For example:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> # /sbin/blockdev --setra 16385 /dev/sdb</pre>
-</div></div><p> </p><p align="LEFT">Refer to the Linux manual page (man) for more information about using the blockdev command.</p><h3 id="InstallingHAWQ-EditingtheConfigurationFiles">Editing the Configuration Files</h3><p align="LEFT">Edit the /etc/hosts file and make sure that it includes the host names and all interface address names for every machine participating in your HAWQ system.</p><ol><li><p>Run the following command to copy the /etc/sysctl.conf file and /etc/security/limits.conf file to the same location of all hosts:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p> </p><p align="LEFT">Refer to the Linux manual (man) page for more information about using the blockdev command.</p><h3 id="InstallingHAWQ-EditingtheConfigurationFiles">Editing the Configuration Files</h3><p align="LEFT">Edit the /etc/hosts file and make sure that it includes the host names and all interface address names for every machine participating in your HAWQ system.</p><ol><li><p>Run the following command to copy the /etc/sysctl.conf file and /etc/security/limits.conf file to the same location of all hosts:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># gpscp -f all_hosts /etc/sysctl.conf =:/etc
 # gpscp -f all_hosts /etc/security/limits.conf =:/etc/security</pre>
 </div></div> <div class="aui-message warning shadowed information-macro">
 <p class="title">Note:</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-                            You may need to configure other parameters(for example, scheduler configuration)on all hosts.
+                            You may need to configure other parameters (for example, scheduler configuration) on all hosts.
                     </div>
 </div>
 </li><li><p>Create or choose a directory that will serve as your master data storage area. This directory should have sufficient disk space for your data and be owned by the gpadmin user and group. For example, run the following commands as root: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -769,31 +767,31 @@ DFS_URL=namenode-host-name:8020/hawq</pre>
 </div></div></li><li>Save and close the file.</li><li><p>Run the following command referencing the path and file name of your initialization configuration file (gpinitsystem_config) and host file (seg_hosts). For example:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">$ cd ~
 $ gpinitsystem -c gpconfigs/gpinitsystem_config -h seg_hosts</pre>
-</div></div><p><span style="line-height: 1.4285;"> </span></p><p>For a fully redundant system (with a standby master and a spread mirror configuration) include the -s and -S options. For example:</p><p><span style="line-height: 1.4285;"> </span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p><span style="line-height: 1.4285;"> </span></p><p>For a fully redundant system (with a standby master and a spread mirror configuration), include the -s and -S options. For example:</p><p><span style="line-height: 1.4285;"> </span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">$ gpinitsystem -c gpconfigs/gpinitsystem_config -h seg_hosts -s standby_master_hostname
 
 </pre>
-</div></div><p><span style="line-height: 1.4285;"><span style="line-height: 1.4285;">The utility verifies your setup information and ensures that it can connect to each host and access the data directories specified in your configuration. If all of the pre-checks are successful, the utility prompts you to confirm your configuration. For example:</span></span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p><span style="line-height: 1.4285;"> <span style="line-height: 1.4285;">The utility verifies your setup information and ensures that it can connect to each host and access the data directories specified in your configuration. If all of the pre-checks are successful, the utility prompts you to confirm your configuration. For example:</span> </span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">=&gt; Continue with Greenplum creation? Yy/Nn 
 Press y to start the initialization.</pre>
-</div></div><p><span style="line-height: 1.4285;"><span style="line-height: 1.4285;background-color: transparent;">The utility begins setup and initialization of the master and each segment instance in the system. Each segment instance is set up in parallel. Depending on the number of segments, this process can take a while.</span></span></p></li><li><p>Set the MASTER_DATA_DIRECTORY environment variable. For example, add the following line to the profile of the master host:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p><span style="line-height: 1.4285;"> <span style="line-height: 1.4285;background-color: transparent;">The utility begins setup and initialization of the master and each segment instance in the system. Each segment instance is set up in parallel. Depending on the number of segments, this process can take a while.</span> </span></p></li><li><p>Set the MASTER_DATA_DIRECTORY environment variable. For example, add the following line to the profile of the master host:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">export MASTER_DATA_DIRECTORY=/data/master/gpseg-1</pre>
-</div></div><p><h2 id="InstallingHAWQ-HAWQonSecureHDFS">HAWQ on Secure HDFS</h2><h3 id="InstallingHAWQ-Requirements">Requirements</h3><ul><li>A secure HDFS installation</li><li>HDFS on wire encryption (<code>dfs.encrypt.data.transfer</code>) MUST be set to <code>false</code>.</li><li>A new un-initialized HAWQ instance or a stopped already initialized HAWQ instance that was previously running on non-secured HDFS</li></ul><h3 id="InstallingHAWQ-Preparation">Preparation</h3><ol><li>If HAWQ is already initialized and running, stop HAWQ by running <code>service hawq stop</code> or <code>&lt;<span>HAWQ installation directory</span>&gt;/bin/gpstop</code>.</li><li>Secure the HDFS cluster using the instructions provided in the <em>Pivotal HD Stack and Tool Reference Guide</em> or using available security tools.</li><li>Insure HDFS is running properly in secured mode.</li><li>Insure that the property <code>dfs.encrypt.data.transfer</code> is set to <code>false</code> in the <code>hdfs-site.xml</code> for your cluster.</li></ol><h3 id="InstallingHAWQ-Configuration">Configuration</h3><ol><li><p>Generate a "postgres" principal and keytab file as shown below:</p> <div class="aui-message warning shadowed information-macro">
+</div></div><p><h2 id="InstallingHAWQ-HAWQonSecureHDFS">HAWQ on Secure HDFS</h2><h3 id="InstallingHAWQ-Requirements">Requirements</h3><ul><li>A secure HDFS installation</li><li>HDFS on wire encryption (<code>dfs.encrypt.data.transfer</code>) MUST be set to <code>false</code>.</li><li>A new un-initialized HAWQ instance or a stopped already initialized HAWQ instance that was previously running on non-secured HDFS</li></ul><h3 id="InstallingHAWQ-Preparation">Preparation</h3><ol><li>If HAWQ is already initialized and running, stop HAWQ by running <code>service hawq stop</code> or <code>&lt;HAWQ installation directory&gt;/bin/gpstop</code>.</li><li>Secure the HDFS cluster using the instructions provided in this Guide or using available security tools.</li><li>Insure HDFS is running properly in secured mode.</li><li>Insure that the property <code>dfs.encrypt.data.transfer</code> is set to <code>false</code> in the <code>hdfs-site.xml</code> for your cluster.</li></ol><h3 id="InstallingHAWQ-Configuration">Configuration</h3><ol><li><p>Generate a "postgres" principal and keytab file as shown below:</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p>The form of principal for the HAWQ master is <code>postgres@REALM</code>, where <code>postgres</code> is the default service name of HAWQ and <code>REALM</code> is the default realm in the cluster's Kerberos configuration. In the examples below we use <code>EXAMPLE.COM</code> for the <code>REALM</code> part; this should be replaced by your cluster's actual <code>REALM</code>.</p>
+<p>The form of principal for the HAWQ master is <code>postgres@REALM</code>, where <code>postgres</code> is the default service name of HAWQ and <code>REALM</code> is the default realm in the cluster's Kerberos configuration. In the examples below, we use <code>EXAMPLE.COM</code> for the <code>REALM</code> part; this should be replaced by your cluster's actual <code>REALM</code>.</p>
 </div>
 </div>
 <div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">kadmin: addprinc -randkey postgres@EXAMPLE.COM
 kadmin: ktadd -k /etc/security/phd/keytab/hawq.service.keytab postgres@EXAMPLE.COM </pre>
-</div></div></li><li><p>Move this keytab file to the appropriate keytab directory on the HAWQ master node (for example, <code>/etc/security/phd/keytab/</code>).</p></li><li><p>Set the ownership of the keytab file to <code>gpadmin:gpadmin</code> and the permissions to 400.</p></li><li><p>Refer to your <code>gpinitsystem_config</code> file (typically in <code>/etc/gphd/hawq/conf</code>) to determine your configured HAWQ HDFS data directory (typically <code>/hawq_data</code>). This will be the last part of the <code>DFS_URL</code> value. For example if <code>DFS_URL</code> is set to <code>centos61-2:8020/hawq_data </code> then your HAWQ HDFS data directory is <code>/hawq_data.</code></p></li><li><p>Create (if required) the HAWQ HDFS data directory in HDFS, and assign ownership as <code>postgres:gpadmin</code> and permissions 755.</p> <div class="aui-message warning shadowed information-macro">
+</div></div></li><li><p>Move this keytab file to the appropriate keytab directory on the HAWQ master node (for example, <code>/etc/security/phd/keytab/</code>).</p></li><li><p>Set the ownership of the keytab file to <code>gpadmin:gpadmin</code> and the permissions to 400.</p></li><li><p>Refer to your <code>gpinitsystem_config</code> file (typically in <code>/etc/gphd/hawq/conf</code>) to determine your configured HAWQ HDFS data directory (typically <code>/hawq_data</code>). This will be the last part of the <code>DFS_URL</code> value. For example, if <code>DFS_URL</code> is set to <code>centos61-2:8020/hawq_data, </code> then your HAWQ HDFS data directory is <code>/hawq_data.</code></p></li><li><p>Create (if required) the HAWQ HDFS data directory in HDFS, and assign ownership as <code>postgres:gpadmin</code> and permissions 755.</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<ul><li>If HAWQ has already been initialized and the directory exists just modify the owner and permissions as shown.</li><li>You need to have HDFS super-user permissions to create or modify a directory in HDFS root. If necessary create an "hdfs" principal to accomplish this task.</li></ul>
+<ul><li>If HAWQ has already been initialized and the directory exists, just modify the owner and permissions as shown.</li><li>You need to have HDFS super-user permissions to create or modify a directory in HDFS root. If necessary, create an "hdfs" principal to accomplish this task.</li></ul>
 </div>
 </div>
-</li><li>Create in HDFS (if not present) the directory <code>/user/gpadmin</code> with ownership <code>gpadmin:gpadmin</code> and permissions 777.</li><li><p>Modify the <code>hdfs-client.xml</code> file (typically in <code>/usr/lib/gphd/hawq/etc</code>) on the master node and ALL segment server nodes by adding the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</li><li>If not present, create in HDFS the directory <code>/user/gpadmin</code> with ownership <code>gpadmin:gpadmin</code> and permissions 777.</li><li><p>Modify the <code>hdfs-client.xml</code> file (typically in <code>/usr/lib/gphd/hawq/etc</code>), on the master node and ALL segment server nodes, by adding the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;hadoop.security.authentication&lt;/name&gt;
   &lt;value&gt;kerberos&lt;/value&gt;
@@ -818,7 +816,7 @@ ENABLE_SECURE_FILESYSTEM=on	</pre>
 <ul><li>Make sure there is no space between the <code>key=value</code>; for example: <code>ENABLE_SECURE_FILESYSTEM = on</code> will cause errors because there are spaces.</li><li>Make sure the value of <code>KERBEROS_KEYFILE</code> is the full path of where you placed the <code>hawq.service.keytab</code> file on the master.</li></ul>
 </div>
 </div>
-</li><li>If HAWQ has already been initialized prior to being secured run the following commands on the HAWQ master as the <code>gpadmin</code> user:<ol><li><code> <span>service hawq start</span> </code></li><li><code> <span>source /usr/local/hawq/greenplum_path.sh</span> </code></li><li><code>gpconfig --masteronly -c krb_server_keyfile -v "'/path/to/keytab/file'"</code> <br/> <strong>NOTE</strong> The single quotes ' after/before the double quotes " in the keytab string above are required!</li><li><code>service hawq stop</code></li></ol></li><li>After you have completed all these steps you can start or initialize HAWQ:<ol><li>If HAWQ was already initialized on non-secured HDFS before this process, start it by running <code>service hawq start</code> or <code>&lt;HAWQ installation directory&gt;/bin/gpstart</code>.</li><li>If HAWQ has not been initialized, initialize it now.</li></ol></li><li>Verify HAWQ is operating properly, if not see next section.</li></ol><h3 id="InstallingHAWQ-Troubleshooting">Troubleshooting</h3><p>If initialization or start-up fails you can look into the gpinitsystem log output and the namenode logs to see if you can pinpoint the cause. Possible causes:</p><ul><li>Incorrect values in your <code>hdfs-client.xml</code></li><li><code>hdfs-client.xml</code> not updated on master and all segment servers</li><li>Unable to login with Kerberos; possible bad keytab or principal for "postgres"<ul><li>Validate on master by doing: <code> <br/>kinit -k &lt;keytab dir path&gt;/hawq.service.keytab postgres@EXAMPLE.COM </code></li></ul></li><li>Wrong HAWQ HDFS data directory or directory permissions: Check your <code>gpinitsystem_config</code> <strong> </strong>file and the <code>DFS_URL</code> value and the directory permissions.</li><li>Unable to create the HAWQ HDFS data directory errors: insure that you have created the proper directory as specified in <code>gpinitsystem_config</code> and that the ownership and permissions are correct.</li></ul></p></li></ol><h3 id="InstallingHAWQ-CreatingaHAWQInstanceonHDFSwithNamenodeHighAvailability(HA)">Creating a HAWQ Instance on HDFS with Namenode High Availability (HA)</h3><p>Before you proceed, check that HDFS is configured with the Namenode HA feature.</p><ol><li><p>Edit the  ${GPHOME}/etc/hdfs-client.xml file:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</li><li>If HAWQ has already been initialized prior to being secured, run the following commands on the HAWQ master as the <code>gpadmin</code> user:<ol><li><code> service hawq start</code></li><li><code> source /usr/local/hawq/greenplum_path.sh </code></li><li><code>gpconfig --masteronly -c krb_server_keyfile -v "'/path/to/keytab/file'"</code> <br/> <strong>NOTE</strong> The single quotes ' after/before the double quotes " in the keytab string above are required!</li><li><code>service hawq stop</code></li></ol></li><li>After you have completed all these steps, you can start or initialize HAWQ:<ol><li>If HAWQ was already initialized on non-secured HDFS before this process, start it by running <code>service hawq start</code> or <code>&lt;HAWQ installation directory&gt;/bin/gpstart</code>.</li><li>If HAWQ has not been initialized, initialize it now.</li></ol></li><li>Verify HAWQ is operating properly, if not, see the next section.</li></ol><h3 id="InstallingHAWQ-Troubleshooting">Troubleshooting</h3><p>If initialization or start-up fails, you can look into the gpinitsystem log output and the namenode logs to see if you can pinpoint the cause. Possible causes:</p><ul><li>Incorrect values in your <code>hdfs-client.xml</code></li><li><code>hdfs-client.xml</code> not updated on master and all segment servers</li><li>Unable to login with Kerberos; possible bad keytab or principal for "postgres"<ul><li>Validate on master by entering the following: <code> <br/>kinit -k &lt;keytab dir path&gt;/hawq.service.keytab postgres@EXAMPLE.COM </code></li></ul></li><li>Wrong HAWQ HDFS data directory or directory permissions: Check your <code>gpinitsystem_config</code> <strong> </strong>file and the <code>DFS_URL</code> value and the directory permissions.</li><li>Unable to create the HAWQ HDFS data directory errors: ensure that you have created the proper directory as specified in <code>gpinitsystem_config</code> and that the ownership and permissions are correct.</li></ul></p></li></ol><h3 id="InstallingHAWQ-CreatingaHAWQInstanceonHDFSwithNamenodeHighAvailability(HA)">Creating a HAWQ Instance on HDFS with Namenode High Availability (HA)</h3><p>Before you proceed, check that HDFS is configured with the Namenode HA feature.</p><ol><li><p>Edit the  ${GPHOME}/etc/hdfs-client.xml file:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
     &lt;name&gt;dfs.nameservices&lt;/name&gt;
     &lt;value&gt;phdcluster&lt;/value&gt;
@@ -856,7 +854,7 @@ ENABLE_SECURE_FILESYSTEM=on	</pre>
 	&lt;name&gt;dfs.ha.namenodes.phdcluster&lt;/name&gt;     
 	&lt;value&gt;nn1,nn2&lt;/value&gt; 
 &lt;/property&gt;</pre>
-</div></div><p>Please make sure nn1 is the active namenode to prevent a failover cost for HAWQ. To check that the active namenode is nn1 reorder the values for "<span>dfs.ha.namenodes.phdcluster</span><span>".</span></p><p><span>If this parameter is changed, please make sure it is changed on all nodes.</span></p>
+</div></div><p>Please make sure nn1 is the active namenode, to prevent a failover cost for HAWQ. To check that the active namenode is nn1, reorder the values for "<span>dfs.ha.namenodes.phdcluster</span> <span>".</span></p><p><span>If this parameter is changed, please make sure it is changed on all nodes.</span></p>
 </div>
 </div>
 </li><li><p>To prepare the configuration file for the command line tool, gpinitsystem, change the following parameters in the gpinitsystem_config file:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -866,7 +864,7 @@ DFS_URL=phdcluster/path/to/hawq/data</pre>
 <p class="title">Note</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<ul><li>Replace phdcluster to real service ID configured in HDFS.</li><li>Replace /path/to/hawq/data to the directory where the user want to store the data on HDFS, and make sure it exists and is writable.</li></ul>
+<ul><li>Replace phdcluster with the real service ID configured in HDFS.</li><li>Replace /path/to/hawq/data with the the directory where the user want to store the data on HDFS, and make sure it exists and is writable.</li></ul>
 </div>
 </div>
 </li></ol><h3 id="InstallingHAWQ-RunningaBasicQuery">Running a Basic Query</h3><p><span style="color: rgb(0,0,0);"> </span>You can run the create database query to test that HAWQ is running:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">

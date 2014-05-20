@@ -158,7 +158,7 @@
               <div class="form-search">
                 <div class='gcse-search'></div>
                 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-                <script src="//javascripts/cse.js" type="text/javascript"></script>
+                <script src="/javascripts/cse.js" type="text/javascript"></script>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@
           </div>
           
           <div id='all-docs-link'>
-            <a href="/">All Documentation</a>
+            <a href="http://docs.gopivotal.com/">All Documentation</a>
           </div>
           
           <div class="container">
@@ -213,9 +213,9 @@
               <!-- Collapsible left-navigation-->
 				<ul class="accordion"  id="accordion-1">
 					<!-- REPLACE <li/> NODES-->
-                                  <li>
+                        <li>
                 <a href="index.html">Home</a></br>
-                        </li>
+                                
                         <li>
                 <a href="PivotalHD.html">Pivotal HD 2.0.1</a>
 
@@ -536,9 +536,7 @@
                 <a href="PXFExternalTableandAPIReference.html">PXF External Table and API Reference</a>
 
                     </li>
-
-              </ul>
-                                    
+            </ul>
             </div><!--end of sub-nav-->
             
             <h3 class="title-container">Administering PHD Using the CLI</h3>
@@ -546,11 +544,11 @@
               <!-- Python script replaces main content -->
 			  <div id ="main"><div style="visibility:hidden; height:2px;">Pivotal Product Documentation : Administering PHD Using the CLI</div><div class="wiki-content group" id="main-content">
 <p>This section describes the administrative actions that can be performed via Pivotal Command Center's command line interface (CLI).</p><p><style type="text/css">/*<![CDATA[*/
-div.rbtoc1398914612616 {padding: 0px;}
-div.rbtoc1398914612616 ul {list-style: disc;margin-left: 0px;}
-div.rbtoc1398914612616 li {margin-left: 0px;padding-left: 0px;}
+div.rbtoc1400035784112 {padding: 0px;}
+div.rbtoc1400035784112 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1400035784112 li {margin-left: 0px;padding-left: 0px;}
 
-/*]]>*/</style><div class="toc-macro rbtoc1398914612616">
+/*]]>*/</style><div class="toc-macro rbtoc1400035784112">
 <ul class="toc-indentation">
 <li><a href="#AdministeringPHDUsingtheCLI-ManagingaCluster">Managing a Cluster</a>
 <ul class="toc-indentation">
@@ -612,7 +610,7 @@ Options:
                         The absolute path for the file containing host names
                         for the role which needs to be started
 </pre>
-</div></div><p>The following table describes the list of values for the HDFS, MapRed, ZooKeeper, HBase, and HAWQ services:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Option</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p><code>start</code></p></td><td class="confluenceTd"><p>Starts all configured cluster services in the right topological order based on service dependencies.</p></td></tr><tr><td class="confluenceTd"><p><code>-s</code></p></td><td class="confluenceTd"><p>Starts the specified service and all services it depends on in the right topological order. The supported services are hdfs, yarn, zookeeper, hbase, hive, hawq, pig, and mahout.</p></td></tr><tr><td class="confluenceTd"><p><code>-r</code></p></td><td class="confluenceTd"><p>Starts only the specified role on a specific set of hosts. Hosts can be specified using the -o option.</p></td></tr><tr><td class="confluenceTd"><p><code>-f</code></p></td><td class="confluenceTd"><p>Forces the cluster to start even if the installation is incomplete.</p></td></tr></tbody></table></div><p>The first time the cluster is started, Pivotal HD implicitly initializes the cluster. For subsequent invocations of the <code>start</code> command, the cluster is not initialized.</p><p> </p><p>Cluster initialization includes the following:</p><ul><li>Namenode format</li><li>Create directories on the local filesystem of cluster nodes and on the hdfs with the correct permission overrides. See the <a href="#AdministeringPHDUsingtheCLI-OverridingDirectoryPermissions">Overriding Directory Permissions</a> section.</li><li>Create HDFS directories for additional services, such as HBase, if these are included in the configured services.</li></ul> <div class="aui-message warning shadowed information-macro">
+</div></div><p>The following table describes the list of values for the HDFS, MapRed, ZooKeeper, HBase, and HAWQ services:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Option</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p><code>start</code></p></td><td class="confluenceTd"><p>Starts all configured cluster services in the right topological order based on service dependencies.</p></td></tr><tr><td class="confluenceTd"><p><code>-s</code></p></td><td class="confluenceTd"><p>Starts the specified service and all services it depends on in the right topological order. The supported services are HDFS, Yarn, Zookeeper, Hbase, Hive, HAWQ, Pig, and Mahout.</p></td></tr><tr><td class="confluenceTd"><p><code>-r</code></p></td><td class="confluenceTd"><p>Starts only the specified role on a specific set of hosts. Hosts can be specified using the -o option.</p></td></tr><tr><td class="confluenceTd"><p><code>-f</code></p></td><td class="confluenceTd"><p>Forces the cluster to start even if the installation is incomplete.</p></td></tr></tbody></table></div><p>The first time the cluster is started, Pivotal HD implicitly initializes the cluster. For subsequent invocations of the <code>start</code> command, the cluster is not initialized.</p><p> </p><p>Cluster initialization includes the following:</p><ul><li>Namenode format</li><li>Create directories on the local filesystem of cluster nodes and on the hdfs, with the correct permission overrides. See the <a href="#AdministeringPHDUsingtheCLI-OverridingDirectoryPermissions">Overriding Directory Permissions</a> section.</li><li>Create HDFS directories for additional services, such as HBase, if these are included in the configured services.</li></ul> <div class="aui-message warning shadowed information-macro">
 <p class="title">Notes</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
@@ -646,7 +644,7 @@ Options:
                         The absolute path for the file containing host names
                         for the role that needs to be stopped
 </pre>
-</div></div><p>The following table describes the list of values for the HDFS, MapRed, ZooKeeper, HBase, and HAWQ services.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Option</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p><code>stop</code></p></td><td class="confluenceTd"><p>Stops all configured cluster services in the right topological order based on service dependencies.</p></td></tr><tr><td class="confluenceTd"><p><code>-s</code></p></td><td class="confluenceTd"><p>Stops the specified service and all the dependent services in the right topological order. The supported services are hdfs, yarn, zookeeper, hbase, hive, hawq, pig, and mahout.</p></td></tr><tr><td class="confluenceTd"><p><code>-r</code></p></td><td class="confluenceTd"><p>Stops the specified role on a specific set of hosts. Hosts can be specified using the -o option.</p></td></tr></tbody></table></div><p>For example:<br/> Cluster level stop:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>The following table describes the list of values for the HDFS, MapRed, ZooKeeper, HBase, and HAWQ services.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Option</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p><code>stop</code></p></td><td class="confluenceTd"><p>Stops all configured cluster services in the right topological order, based on service dependencies.</p></td></tr><tr><td class="confluenceTd"><p><code>-s</code></p></td><td class="confluenceTd"><p>Stops the specified service and all the dependent services in the right topological order. The supported services are HDFS, Yarn, Zookeeper, HBase, Hive, HAWQ, Pig, and Mahout.</p></td></tr><tr><td class="confluenceTd"><p><code>-r</code></p></td><td class="confluenceTd"><p>Stops the specified role on a specific set of hosts. Hosts can be specified using the -o option.</p></td></tr></tbody></table></div><p>For example:<br/> Cluster level stop:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client stop -l CLUSTERNAME
 </pre>
 </div></div><p>Service level stop:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -655,7 +653,7 @@ Options:
 </div></div><p>Role level stop:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client stop -l CLUSTERNAME -r datanode -o hostfile
 </pre>
-</div></div><h3 id="AdministeringPHDUsingtheCLI-RestartingaCluster">Restarting a Cluster</h3><p>You can use the <code>-restart</code> command to stop, then restart a cluster.</p><p>See stopping and starting a cluster, above, for more details about the stop/start operations.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><h3 id="AdministeringPHDUsingtheCLI-RestartingaCluster">Restarting a Cluster</h3><p>You can use the <code>-restart</code> command to stop, then restart, a cluster.</p><p>See stopping and starting a cluster, above, for more details about the stop/start operations.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]#  icm_client restart -h
 Usage: /usr/bin/icm_client restart [options]
 
@@ -674,24 +672,24 @@ Options:
                         The absolute path for the file containing host names
                         for the role which needs to be started
 </pre>
-</div></div><p><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-Reconfiguring"></span></p><h3 id="AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</h3><p>Run the <code>reconfigure </code>command to update specific configuration for an existing cluster.</p> <div class="aui-message warning shadowed information-macro">
+</div></div><p><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-Reconfiguring"></span></p><h3 id="AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</h3><p>Run the <code>reconfigure </code>command to update specific configurations for an existing cluster.</p> <div class="aui-message warning shadowed information-macro">
 <p class="title">Caution</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
 <p>Running the <code>reconfigure </code>command on a secure cluster will disable security.</p>
 </div>
 </div>
-<p>Some cluster specific configurations cannot be updated:</p> <div class="aui-message warning shadowed information-macro">
+<p>Some cluster-specific configurations cannot be updated:</p> <div class="aui-message warning shadowed information-macro">
 <p class="title">Important</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<ul><li>Reconfiguring the topology of a cluster (host to role mapping) is not allowed. For example: changing the NameNode to a different node or adding new set of datanodes to a cluster</li><li>Properties based on hostnames: For example, <code>fs.defaultFS</code>, <code>dfs.namenode</code>. and the <code>http-address</code>.</li><li>Properties with directory paths as values.</li></ul>
+<ul><li>Reconfiguring the topology of a cluster (host-to-role mapping) is not allowed. For example: changing the NameNode to a different node or adding new set of datanodes to a cluster</li><li>Properties based on hostnames: For example, <code>fs.defaultFS</code>, <code>dfs.namenode</code>. and the <code>http-address</code>.</li><li>Properties with directory paths as values.</li></ul>
 </div>
 </div>
 <p>The following table lists properties that can only be changed with a <code>--force</code> option.</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<ul><li>You are expected to take care of all the necessary prerequisites prior to making changes to any of the following properties using the force flag</li><li>Incorrect provisioning can make the cluster get into an inconsistent/unusable state</li></ul>
+<ul><li>You are expected to take care of all the necessary prerequisites prior to making changes to any of the following properties, by using the force flag.</li><li>Incorrect provisioning can put the cluster into an inconsistent/unusable state.</li></ul>
 </div>
 </div>
 <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Property Name</p></th><th class="confluenceTh"><p>Configuration File</p></th></tr><tr><td class="confluenceTd"><p><code>datanode.disk.mount.points</code></p></td><td class="confluenceTd"><p><code>clusterConfig.xml</code></p></td></tr><tr><td class="confluenceTd"><p><code>namenode.disk.mount.points</code></p></td><td class="confluenceTd"><p><code>clusterConfig.xml</code></p></td></tr><tr><td class="confluenceTd"><p><code>secondary.namenode.disk.mount.points</code></p></td><td class="confluenceTd"><p><code>clusterConfig.xml</code></p></td></tr><tr><td class="confluenceTd"><p><code>hawq.master.directory</code></p></td><td class="confluenceTd"><p><code>clusterConfig.xml</code></p></td></tr><tr><td class="confluenceTd"><p><code>hawq.segment.directory</code></p></td><td class="confluenceTd"><p><code>clusterConfig.xml</code></p></td></tr><tr><td class="confluenceTd" colspan="1"><code>zookeeper.data.dir</code></td><td class="confluenceTd" colspan="1"><code>clusterConfig.xml</code></td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -725,22 +723,22 @@ Options:
                         Ignored if -p is specified
   -f, --force           Forcibly reconfigure the cluster (allows changes to
                         any servicesConfigGlobals property)</pre>
-</div></div><p><strong>To reconfigure an existing cluster:</strong></p><ol><li>Stop the cluster:<br/> <code> icm_client stop -l CLUSTERNAME</code></li><li>Fetch the configurations for the cluster in a local directory:<br/> <code>icm_client fetch-configuration -l CLUSTERNAME -o LOCALDIR</code></li><li>Edit the configuration files in the cluster configuration directory (<code>LOCALDIR</code>).</li><li>Reconfigure the cluster:<br/> <code>icm_client reconfigure -l CLUSTERNAME -c LOCALDIR</code></li></ol><p> </p><p>Following an upgrade or reconfiguration, you need to synchronize the configuration files, as follows:<strong> <br/> </strong></p><ol><li>Fetch the new templates that come with the upgraded software by running <code>icm_client fetch-template</code>.</li><li>Retrieve the existing configuration from database using <code>icm_client fetch-configuration</code>.</li><li>Synchronize the new configurations (<code>hdfs/hadoop-env</code>) from the template directory to the existing cluster configuration directory.</li><li>Upgrade or reconfigure service by specifying the cluster configuration directory with updated contents.</li></ol><h3 id="AdministeringPHDUsingtheCLI-Add/RemoveServices">Add / Remove Services</h3><p>Services can be added  / removed using <code>icm_client reconfigure</code> command.</p><ul><li>Edit the <code>clusterConfig.xml</code> file to add or remove services from the service list in <code>services</code> tag</li><li>Edit <code>hostRoleMapping</code> section to add or remove hosts for the specific services configured</li><li>Edit the <code>servicesConfigGlobals</code> if required for the specific service added</li><li>Follow the steps for <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>.</li><li>As in a new deployment you can use the <code>-p</code> or <code>-s</code> option to disable scanhosts or preparehosts on the newly added hosts</li><li>If you want to prepare the new hosts with java or if you want to disable iptables or SELinux, follow the instructions for installing Java mentioned in the Deploying a cluster section of this document</li></ul> <div class="aui-message warning shadowed information-macro">
+</div></div><p><strong>To reconfigure an existing cluster:</strong></p><ol><li>Stop the cluster:<br/> <code> icm_client stop -l CLUSTERNAME</code></li><li>Fetch the configurations for the cluster into a local directory:<br/> <code>icm_client fetch-configuration -l CLUSTERNAME -o LOCALDIR</code></li><li>Edit the configuration files in the cluster configuration directory (<code>LOCALDIR</code>).</li><li>Reconfigure the cluster:<br/> <code>icm_client reconfigure -l CLUSTERNAME -c LOCALDIR</code></li></ol><p>Following an upgrade or reconfiguration, you need to synchronize the configuration files, as follows:<strong> <br/> </strong></p><ol><li>Fetch the new templates that come with the upgraded software by running <code>icm_client fetch-template</code>.</li><li>Retrieve the existing configuration from the database using <code>icm_client fetch-configuration</code>.</li><li>Synchronize the new configurations (<code>hdfs/hadoop-env</code>) from the template directory to the existing cluster configuration directory.</li><li>Upgrade or reconfigure service by specifying the cluster configuration directory with updated contents.</li></ol><h3 id="AdministeringPHDUsingtheCLI-Add/RemoveServices">Add / Remove Services</h3><p>Services can be added  / removed using the <code>icm_client reconfigure</code> command.</p><ul><li>Edit the <code>clusterConfig.xml</code> file to add or remove services from the service list in the <code>services</code> tag.</li><li>Edit the <code>hostRoleMapping</code> section to add or remove hosts for the specific services configured.</li><li>Edit the <code>servicesConfigGlobals</code> if required for the specific service added.</li><li>Follow the steps for <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>.</li><li>In a new deployment, you can use the <code>-p</code> or <code>-s</code> option to disable scanhosts or preparehosts on the newly added hosts.</li><li>If you want to prepare the new hosts with Java, or if you want to disable iptables or SELinux, follow the instructions for installing Java mentioned in the Deploying a Cluster section of this document.</li></ul> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
 <p>Removing a specific service using the <code>icm_client reconfigure</code> command does not remove rpms from the nodes. The rpms are only removed when the Cluster is uninstalled</p>
 </div>
 </div>
-<h3 id="AdministeringPHDUsingtheCLI-AddHoststoCluster">Add Hosts to Cluster</h3><p>If you plan to add hosts as part of adding a new service, perform the following:</p><ul><li>Prepare the new hosts using the <code>icm_client preparehosts</code> command</li><li>Refer to <em>Add / Remove Services</em> section</li></ul><p>If you plan to add/remove hosts as part of an existing service in the cluster do the following:</p> <div class="aui-message warning shadowed information-macro">
+<h3 id="AdministeringPHDUsingtheCLI-AddHoststoCluster">Add Hosts to Cluster</h3><p>If you plan to add hosts as part of adding a new service, perform the following:</p><ul><li>Prepare the new hosts using the <code>icm_client preparehosts</code> command.</li><li>Refer to the <em>Add / Remove Services</em> section.</li></ul><p>If you plan to add/remove hosts, as part of an existing service in the cluster, do the following:</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p>You can only add or remove hosts for slave roles (refer to <em>Expanding a Cluster</em> section for the list of slave roles). You cannot make host changes for any other role.</p>
+<p>You can only add or remove hosts for slave roles (refer to the <em>Expanding a Cluster</em> section for the list of slave roles). You cannot make host changes for any other role.</p>
 </div>
 </div>
-<ul><li>Prepare the new hosts using the <code>icm_client preparehosts</code> command</li><li>You can add the new hosts to the corresponding slave roles in the <code>hostRoleMapping</code> section in <code>clusterConfig.xml<br/> </code></li><li>Follow the steps for <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a></li></ul> <div class="aui-message warning shadowed information-macro">
+<ul><li>Prepare the new hosts using the <code>icm_client preparehosts</code> command.</li><li>You can add the new hosts to the corresponding slave roles in the <code>hostRoleMapping</code> section in <code>clusterConfig.xml.<br/> </code></li><li>Follow the steps for <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>.</li></ul> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p>You cannot add one service and remove another at the same time. You have to perform these as two separate steps; however you can add multiple services OR remove multiple services at the same time.</p>
+<p>You cannot add one service and remove another at the same time. You have to perform these as two separate steps; however, you can add multiple services OR remove multiple services at the same time.</p>
 </div>
 </div>
 <p> </p><h3 id="AdministeringPHDUsingtheCLI-RetrievingConfigurationaboutaDeployedCluster">Retrieving Configuration about a Deployed Cluster</h3><p>Run the <code>fetch-configuration</code> command to fetch the configurations for an existing cluster and store them in a local file system directory.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -772,10 +770,10 @@ Options:
 <p class="title">Notes</p>
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<ul><li>Make sure you run <code>preparehosts</code> against the new slave hosts prior to adding them to the cluster. (See the <code>preparehosts</code> command example in the "Preparing the Cluster for Pivotal HD" section.)</li><li><span style="color: rgb(51,51,51);">If security is enabled on the cluster; you will have to re-enable it after adding a node.</span></li></ul>
+<ul><li>Make sure you run <code>preparehosts</code> against the new slave hosts prior to adding them to the cluster. (See the <code>preparehosts</code> command example in the "Preparing the Cluster for Pivotal HD" section.)</li><li>If security is enabled on the cluster; you will have to re-enable it after adding a node.</li></ul>
 </div>
 </div>
-<p>Run the <code>add-slaves </code>command to add additional slave hosts to an existing cluster. All the slave roles for <strong><em>existing </em></strong>cluster services will be installed on the new cluster hosts.</p><p>The following table indicates the services and their corresponding slave roles. Services not included in this list are not allowed for expansion (or shrinking).</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Service Name</p></th><th class="confluenceTh"><p>Slave</p></th></tr><tr><td class="confluenceTd"><p><code>hdfs</code></p></td><td class="confluenceTd"><p><code>datanode</code></p></td></tr><tr><td class="confluenceTd"><p><code>yarn</code></p></td><td class="confluenceTd"><p><code>yarn-nodemanager<br/> </code></p></td></tr><tr><td class="confluenceTd"><p><code>hbase</code></p></td><td class="confluenceTd"><p><code>hbase-regionserver</code></p></td></tr><tr><td class="confluenceTd"><p><code>hawq</code></p></td><td class="confluenceTd"><p><code>hawq-segment</code></p></td></tr></tbody></table></div><p>If you only want to install an individual component on a node, you should do this by manually editing the <code>clusterConfig.xml</code> file, then running the <code>reconfigure</code> command (see <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>).</p><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<p>Run the <code>add-slaves </code>command to add additional slave hosts to an existing cluster. All the slave roles for <strong> <em>existing </em> </strong>cluster services will be installed on the new cluster hosts.</p><p>The following table indicates the services and their corresponding slave roles. Services not included in this list are not allowed for expansion (or shrinking).</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Service Name</p></th><th class="confluenceTh"><p>Slave</p></th></tr><tr><td class="confluenceTd"><p><code>hdfs</code></p></td><td class="confluenceTd"><p><code>datanode</code></p></td></tr><tr><td class="confluenceTd"><p><code>yarn</code></p></td><td class="confluenceTd"><p><code>yarn-nodemanager<br/> </code></p></td></tr><tr><td class="confluenceTd"><p><code>hbase</code></p></td><td class="confluenceTd"><p><code>hbase-regionserver</code></p></td></tr><tr><td class="confluenceTd"><p><code>hawq</code></p></td><td class="confluenceTd"><p><code>hawq-segment</code></p></td></tr></tbody></table></div><p>If you only want to install an individual component on a node, you should do this by manually editing the <code>clusterConfig.xml</code> file, then running the <code>reconfigure</code> command (see <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>).</p><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client add-slaves --help
 Usage: /usr/bin/icm_client add-slaves [options]
 
@@ -812,7 +810,7 @@ Options:
                         is specified</pre>
 </div></div><p><strong>Sample Usage:</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client add-slaves -l CLUSTERNAME -f slave_hostfile</pre>
-</div></div><p> </p><p>Make sure you start datanode and yarn nodemanager on the newly added slave hosts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p> </p><p>Make sure you start datanode and Yarn nodemanager on the newly added slave hosts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client start -l CLUSTERNAME -r datanode -o hostfile
 icm_client start -l CLUSTERNAME -r yarn-nodemanager -o hostfile
 </pre>
@@ -838,10 +836,10 @@ icm_client start -l CLUSTERNAME -r yarn-nodemanager -o hostfile
 <p><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-ShrinkCluster"></span></p><h3 id="AdministeringPHDUsingtheCLI-ShrinkingaCluster">Shrinking a Cluster</h3> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p>Make sure you decommission the slave hosts (refer to the next section) prior to removing them to avoid potential data loss.</p>
+<p>Make sure you decommission the slave hosts (refer to the next section) prior to removing them, to avoid potential data loss.</p>
 </div>
 </div>
-<p> </p><p>Run the <code>remove-slaves</code> command lets the user to remove slave hosts from an existing cluster. All the slave roles for the existing cluster services will be removed from the given hosts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<p> </p><p>Running the <code>remove-slaves</code> command lets the user remove slave hosts from an existing cluster. All the slave roles for the existing cluster services will be removed from the given hosts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client remove-slaves --help
 Usage: /usr/bin/icm_client remove-slaves [options]
 
@@ -858,23 +856,23 @@ Options:
 </div></div><p><br class="atl-forced-newline"/> <strong>Sample Usage</strong>:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client remove-slaves -l CLUSTERNAME -f hostfile
 </pre>
-</div></div><h3 id="AdministeringPHDUsingtheCLI-DecommissioningNodes">Decommissioning Nodes</h3><p>Decommissioning is required to prevent potential loss of data blocks when you shutdown/remove slave hosts form a cluster. This is not an instant process since it requires replication of potentially a large number of blocks to other cluster nodes.</p><p>The following are the manual steps to decommission slave hosts (datanodes,nodemanagers) from a cluster.</p><ul><li>On the NameNode host machine<ul><li>Edit the <code> /etc/gphd/hadoop/conf/dfs.exclude </code> file and add the datanode hostnames to be removed (separated by newline character). Make sure you use the FQDN for each hostname.</li><li><p>Execute the dfs refresh command</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><h3 id="AdministeringPHDUsingtheCLI-DecommissioningNodes">Decommissioning Nodes</h3><p>Decommissioning is required to prevent potential loss of data blocks when you shutdown/remove slave hosts from a cluster. This is not an instant process, since it requires replication of a potentially large number of blocks to other cluster nodes.</p><p>The following are the manual steps to decommission slave hosts (datanodes,nodemanagers) from a cluster.</p><ul><li>On the NameNode host machine:<ul><li>Edit the <code> /etc/gphd/hadoop/conf/dfs.exclude </code> file and add the datanode hostnames to be removed (separated by a newline character). Make sure you use the FQDN for each hostname.</li><li><p>Execute the dfs refresh command:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin] sudo -u hdfs hdfs dfsadmin –refreshNodes
 </pre>
-</div></div></li></ul></li><li>On the Yarn Resource Manager host machine<ul><li>Edit <code>/etc/gphd/hadoop/conf/yarn.exclude </code> file and add the node manager hostnames to be removed (separated by newline character). Make sure you use the FQDN for each hostname.</li><li><p>Execute the yarn refresh command</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ul></li><li>On the Yarn Resource Manager host machine:<ul><li>Edit <code>/etc/gphd/hadoop/conf/yarn.exclude </code> file and add the node manager hostnames to be removed (separated by newline character). Make sure you use the FQDN for each hostname.</li><li><p>Execute the Yarn refresh command:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin] sudo -u hdfs yarn rmadmin -refreshNodes
 </pre>
-</div></div></li></ul></li><li>Check Decommission status<ul><li>Monitor decommission progress with name-node Web UI <code> <span class="nolink">http://NAMENODE_FQDN:50070</span> </code> and navigate to Decommissioning Nodes page</li><li>Check whether the admin state has changed to Decommission In Progress for the DataNodes being decommissioned. When all the DataNodes report their state as Decommissioned then all the blocks have been replicated.</li></ul></li><li>Shut down the decommissioned nodes<ul><li>Stop datanode and yarn node manager on the targeted slaves to be removed</li></ul></li></ul><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ul></li><li>Check Decommission status:<ul><li>Monitor decommission progress with name-node Web UI <code> http://NAMENODE_FQDN:50070 </code> and navigate to the Decommissioning Nodes page.</li><li>Check whether the admin state has changed to Decommission In Progress for the DataNodes being decommissioned. When all the DataNodes report their state as Decommissioned, then all the blocks have been replicated.</li></ul></li><li>Shut down the decommissioned nodes:<ul><li>Stop datanode and Yarn node manager on the targeted slaves to be removed.</li></ul></li></ul><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin] icm_client stop -l CLUSTERNAME -r datanode -o hostfile
 [gpadmin] icm_client stop -l CLUSTERNAME -r yarn-nodemanager -o hostfile
 </pre>
 </div></div> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p>For HBase regionservers you can proceed with shutting down the region servers on the slave hosts to be removed. It is preferable to use <code>graceful_stop</code> script that hbase provides if load balancer is disabled.</p>
+<p>For HBase regionservers, you can proceed with shutting down the region servers on the slave hosts to be removed. It is preferable to use the <code>graceful_stop</code> script that hbase provides, if the load balancer is disabled.</p>
 </div>
 </div>
-<p><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-EnablingHA"></span></p><h3 id="AdministeringPHDUsingtheCLI-HighAvailability">High Availability</h3><h4 id="AdministeringPHDUsingtheCLI-EnableHA"><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-EnableHA"></span></h4><h4 id="AdministeringPHDUsingtheCLI-EnablingHighAvailabilityonaCluster" style="text-align: left;">Enabling High Availability on a Cluster</h4><ul style="text-align: left;"><li>High availability is disabled by default.</li><li>Currently we only support Quorum Journal based storage for high availability.</li><li>PCC 2.1 is the first version to support HA. If you are running an earlier version, download and import the latest version of Pivotal Command Center (PCC) (see <a href="InstallingPHDUsingtheCLI.html">Installing PHD Using the CLI</a> for details)</li></ul> <div class="aui-message warning shadowed information-macro">
+<p><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-EnablingHA"></span></p><h3 id="AdministeringPHDUsingtheCLI-HighAvailability">High Availability</h3><h4 id="AdministeringPHDUsingtheCLI-EnableHA"><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-EnableHA"></span></h4><h4 id="AdministeringPHDUsingtheCLI-EnablingHighAvailabilityonaCluster" style="text-align: left;">Enabling High Availability on a Cluster</h4><ul style="text-align: left;"><li>High availability is disabled by default.</li><li>Currently we only support Quorum Journal-based storage for high availability.</li><li>PCC 2.1 is the first version to support HA. If you are running an earlier version, download and import the latest version of Pivotal Command Center (PCC). (See <a href="InstallingPHDUsingtheCLI.html">Installing PHD Using the CLI</a> for details.)</li></ul> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
 <p>Before you enable HA for any cluster, make sure you take into consideration our recommended <a href="InstallingPHDUsingtheCLI.html#InstallingPHDUsingtheCLI-HABestPractices">HA Best Practices</a>.</p>
@@ -884,9 +882,9 @@ Options:
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client stop -l CLUSTERNAME</pre>
 </div></div></li><li><p>For HAWQ users, stop HAWQ.<br/>From the HAWQ master, as <code>gpadmin</code>, run the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">/etc/init.d/hawq stop</pre>
-</div></div></li><li>Backup the Namenode data. Copy <code><span style="color: rgb(34,34,34);">{dfs.namenode.name.dir}/</span></code><span style="color: rgb(34,34,34);">current</span> to a backup directory.<br/><br/></li><li><p>Fetch the configurations for the cluster in a local directory:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li>Backup the Namenode data. Copy <code> {dfs.namenode.name.dir}/ </code> current to a backup directory.</li><li><p>Fetch the configurations for the cluster in a local directory:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client fetch-configuration -l CLUSTERNAME -o LOCALDIR</pre>
-</div></div></li><li>Edit <code>clusterConfig.xml</code> as follows:<br/><p>Comment out <code>secondarynamenode</code> role in <code>hdfs</code> service</p><p>Uncomment <code>standbynamenode</code> and <code>journalnode</code> roles in <code>hdfs</code> service</p><p>Uncomment <code>nameservices</code>, <code>namenode1id</code>, <code>namenode2id</code>, <code>journalpath</code>, and <code>journalport</code> entries in <code>serviceConfigGlobals<br/><br/></code></p></li><li><p>Edit <code>hdfs/hdfs-site.xml</code> as follows:<br/>Uncomment the following properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li>Edit <code>clusterConfig.xml</code> as follows:<br/><p>Comment out <code>secondarynamenode</code> role in <code>hdfs</code> service.</p><p>Uncomment <code>standbynamenode</code> and <code>journalnode</code> roles in <code>hdfs</code> service.</p><p>Uncomment <code>nameservices</code>, <code>namenode1id</code>, <code>namenode2id</code>, <code>journalpath</code>, and <code>journalport</code> entries in <code>serviceConfigGlobals.<br/> <br/> </code></p></li><li><p>Edit <code>hdfs/hdfs-site.xml</code> as follows:<br/>Uncomment the following properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt; 
   &lt;name&gt;dfs.nameservices&lt;/name&gt; 
   &lt;value&gt;${nameservices}&lt;/value&gt; 
@@ -951,7 +949,7 @@ Options:
    &lt;value&gt;true&lt;/value&gt;
  &lt;/property&gt;
 &lt;!-- END Namenode Auto HA related properties --&gt;</pre>
-</div></div><p>Comment the following properties</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>Comment the following properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
   &lt;value&gt;${secondarynamenode}:50090&lt;/value&gt;
@@ -959,7 +957,7 @@ Options:
     The secondary namenode http server address and port.
   &lt;/description&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Edit <code>yarn/yarn-site.xml</code> as follows:<code><br/></code>Set the following property/value:<code><br/></code></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Edit <code>yarn/yarn-site.xml</code> as follows:<code> <br/> </code>Set the following property/value:<code> <br/> </code></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
     &lt;name&gt;mapreduce.job.hdfs-servers&lt;/name&gt;
     &lt;value&gt;hdfs://${nameservices}&lt;/value&gt;
@@ -1032,7 +1030,7 @@ DFS_URL=${nameservices}/hawq_data</pre>
 		&lt;name&gt;dfs.client.failover.proxy.provider.${nameservices}&lt;/name&gt;
 		&lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;
 	&lt;/property&gt;</pre>
-</div></div></li><li><span style="color: rgb(34,34,34);">On the standby Namenode, move <code>{dfs.namenode.name.dir}/</code></span><span style="color: rgb(34,34,34);"><code>current</code> to a backup directory</span> (or delete).<br/><br/></li><li><p>Reconfigure the cluster:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li>On the standby Namenode, move <code>{dfs.namenode.name.dir}/</code> <code>current</code> to a backup directory (or delete).</li><li><p>Reconfigure the cluster:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client reconfigure -l CLUSTERNAME -c LOCALDIR</pre>
 </div></div></li><li><p>Start the cluster:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client start -l CLUSTERNAME</pre>
@@ -1043,7 +1041,7 @@ DFS_URL=${nameservices}/hawq_data</pre>
 <p>Running the <code>reconfigure </code>command on a secure cluster disables security in PHD-1.1.0.0 and PHD-1.1.1.0</p>
 </div>
 </div>
-</li><li>Update the HIVE Metastore:<br/>Hive metastore contains references to <code>hdfs</code> path with <code><span style="text-decoration: none;">namenode:port</span> </code>in the url. This needs to be updated to use the nameservices so HIVE scripts can work when ever NameNode failure happens.<br/><strong>Note</strong>: Make sure metastore is not running and is backed up to a persistent store before running the update commands.<br/><br/><ol><li>Login to host configured as <code>hive-metastore</code>.<br/><br/></li><li><p>Display the current NameNode and hdfspath for hive warehouse directory:<br/><code>/usr/lib/gphd/hive/bin/metatool -listFSRoot<br/><br/></code></p></li><li><p>Run the following command:<br/><code>/usr/lib/gphd/hive/bin/metatool -updateLocation hdfs://&lt;nameservices&gt; hdfs://&lt;current_namenode&gt;:&lt;dfs_port&gt;</code><br/><br/>Where <code>nameservices</code> is the logical name used for the nameservices in a HA enabled cluster and <code>current_namenode</code> is the hostname of the NameNode on the cluster before reconfiguring to enable HA.</p> <div class="aui-message warning shadowed information-macro">
+</li><li>Update the HIVE Metastore:<br/>Hive metastore contains references to <code>hdfs</code> path with <code> namenode:port </code>in the url. This needs to be updated to use the nameservices, so HIVE scripts can work whenever NameNode failure happens.<br/> <strong>Note</strong>: Make sure metastore is not running and is backed up to a persistent store before running the update commands.<br/> <br/><ol><li>Login to host configured as <code>hive-metastore</code>.</li><li><p>Display the current NameNode and hdfspath for the Hive warehouse directory:<br/> <code>/usr/lib/gphd/hive/bin/metatool -listFSRoot<br/> <br/> </code></p></li><li><p>Run the following command:<br/> <code>/usr/lib/gphd/hive/bin/metatool -updateLocation hdfs://&lt;nameservices&gt; hdfs://&lt;current_namenode&gt;:&lt;dfs_port&gt;</code> <br/> <br/>where: <code>nameservices</code> is the logical name used for the nameservices in a HA enabled cluster and <code>current_namenode</code> is the hostname of the NameNode on the cluster before reconfiguring to enable HA.</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
 <p>When specifying the <code>nameservices</code>, do not use underscores ('_'), for example, <code>phd_cluster</code>.</p>
@@ -1055,7 +1053,7 @@ DFS_URL=${nameservices}/hawq_data</pre>
 <p class="title">Important</p>
 <span class="aui-icon icon-hint">Icon</span>
 <div class="message-content">
-<p> <span>You must disable high availability before upgrading a cluster.</span></p>
+<p> You must disable high availability before upgrading a cluster.</p>
 </div>
 </div>
 <p style="text-align: left;">To disable high availability:</p><ol style="text-align: left;"><li><p>Synchronize the active and standby Namenode data. On the Namenode, run:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -1065,9 +1063,9 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client stop -l CLUSTERNAME</pre>
 </div></div></li><li><p>For HAWQ users, stop HAWQ:</p><p>From the HAWQ master, as <code>gpadmin</code>, run the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">/etc/init.d/hawq stop</pre>
-</div></div></li><li><p>Back up the Namenode data. On both the active and standby Namenode copy <code><span style="color: rgb(34,34,34);">{dfs.namenode.name.dir}/</span></code><span style="color: rgb(34,34,34);">current</span> to a backup directory.</p></li><li><p>Fetch the configurations for the cluster in a local directory:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Back up the Namenode data. On both the active and standby Namenode copy <code> {dfs.namenode.name.dir}/ </code> current to a backup directory.</p></li><li><p>Fetch the configurations for the cluster in a local directory:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client fetch-configuration -l CLUSTERNAME -o LOCALDIR</pre>
-</div></div></li><li>Edit <code>clusterConfig.xml</code> as follows:<br/><p>Uncomment out <code>secondarynamenode</code> role in <code>hdfs</code> service</p><p>Comment <code>standbynamenode</code> and <code>journalnode</code> roles in <code>hdfs</code> service</p><p>Comment <code>nameservices</code>, <code>namenode1id</code>, <code>namenode2id</code>, <code>journalpath</code>, and <code>journalport</code> entries in <code>serviceConfigGlobals<br/><br/></code></p></li><li><p>Edit <code>hdfs/hdfs-site.xml</code> as follows:<br/>Comment the following properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li>Edit <code>clusterConfig.xml</code> as follows:<br/><p>Uncomment out the <code>secondarynamenode</code> role in <code>hdfs</code> service.</p><p>Comment the <code>standbynamenode</code> and <code>journalnode</code> roles in <code>hdfs</code> service.</p><p>Comment the <code>nameservices</code>, <code>namenode1id</code>, <code>namenode2id</code>, <code>journalpath</code>, and <code>journalport</code> entries in <code>serviceConfigGlobals.<br/> <br/> </code></p></li><li><p>Edit <code>hdfs/hdfs-site.xml</code> as follows:<br/>Comment the following properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt; 
   &lt;name&gt;dfs.nameservices&lt;/name&gt; 
   &lt;value&gt;${nameservices}&lt;/value&gt; 
@@ -1132,7 +1130,7 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
    &lt;value&gt;true&lt;/value&gt;
  &lt;/property&gt;
 &lt;!-- END Namenode Auto HA related properties --&gt;</pre>
-</div></div><p>Uncomment the following properties</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>Uncomment the following properties:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
   &lt;value&gt;${secondarynamenode}:50090&lt;/value&gt;
@@ -1140,7 +1138,7 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
     The secondary namenode http server address and port.
   &lt;/description&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Edit <code>yarn/yarn-site.xml</code></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Edit <code>yarn/yarn-site.xml:</code></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
     &lt;name&gt;mapreduce.job.hdfs-servers&lt;/name&gt;
     &lt;value&gt;hdfs://${namenode}:${dfs.port}&lt;/value&gt;
@@ -1156,7 +1154,7 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
   the FileSystem implementation class.  The uri's authority is used to
   determine the host, port, etc. for a filesystem.&lt;/description&gt;
 &lt;/property&gt;</pre>
-</div></div><p>Comment following property:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>Comment the following property:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
    &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
    &lt;value&gt;${zookeeper-server}:${zookeeper.client.port}&lt;/value&gt;
@@ -1217,7 +1215,7 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"> icm_client reconfigure -l CLUSTERNAME -c LOCALDIR</pre>
 </div></div></li><li><p>Start the cluster:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">icm_client start -l CLUSTERNAME</pre>
-</div></div></li><li>Update the HIVE Metastore:<br/>Hive metastore contains references to <code>hdfs</code> path with <code>nameservices </code>in the url. This needs to be updated to use the <span style="text-decoration: none;">namenode:port</span>.<br/><strong>Note</strong>: Make sure metastore is not running and is backed up to a persistent store before running the update commands.<br/><ol><li>Login to host configured as <code>hive-metastore</code>.<br/><br/></li><li><p>Display the current NameNode and hdfspath for hive warehouse directory:<br/><code>/usr/lib/gphd/hive/bin/metatool -listFSRoot<br/><br/></code></p><p>Run the following command:<br/><code>/usr/lib/gphd/hive/bin/metatool -updateLocation hdfs://&lt;current_namenode&gt;:&lt;dfs_port&gt; hdfs://&lt;nameservices&gt;</code><br/><br/>Where <code>nameservices</code> is the logical name used for the nameservices in a HA enabled cluster and <code>current_namenode</code> is the hostname of the NameNode on the cluster after reconfiguring to disable HA.</p> <div class="aui-message warning shadowed information-macro">
+</div></div></li><li>Update the HIVE Metastore:<br/>Hive metastore contains references to <code>hdfs</code> path with <code>nameservices </code>in the url. This needs to be updated to use the namenode:port.<br/> <strong>Note</strong>: Make sure metastore is not running and is backed up to a persistent store before running the update commands.<br/><ol><li>Login to the host configured as <code>hive-metastore</code>.</li><li><p>Display the current NameNode and hdfspath for the Hive warehouse directory:<br/> <code>/usr/lib/gphd/hive/bin/metatool -listFSRoot<br/> <br/> </code></p><p>Run the following command:<br/> <code>/usr/lib/gphd/hive/bin/metatool -updateLocation hdfs://&lt;current_namenode&gt;:&lt;dfs_port&gt; hdfs://&lt;nameservices&gt;</code> <br/> <br/>where: <code>nameservices</code> is the logical name used for the nameservices in a HA enabled cluster and <code>current_namenode</code> is the hostname of the NameNode on the cluster after reconfiguring to disable HA.</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
 <p>When specifying the <code>nameservices</code>, do not use underscores ('_'), for example, <code>phd_cluster</code>.</p>
@@ -1225,25 +1223,25 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
 </div>
 <p><code> </code></p></li></ol></li><li><p>For HAWQ users, restart HAWQ services for your configuration changes to take effect. <br/>From the HAWQ master, as <code>gpadmin</code>, run the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">/etc/init.d/hawq start</pre>
-</div></div></li></ol><h4 id="AdministeringPHDUsingtheCLI-HAAdminCommandReference" style="text-align: left;">HAAdmin Command Reference</h4><ul style="text-align: left;"><li><code>hdfs haadmin</code> prints help for all subcommands and options. <code>serviceid </code>is the logical name configured for each NameNode, as <code>namenode1id</code> and <code>namenode2id</code>, in <code>clusterConfig.xml</code></li><li>Check state of a given NameNode:<em> <br/></em></li></ul><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -getServiceState &lt;serviceid&gt; Ex : hdfs haadmin -getServiceState nn1</code></p><ul style="text-align: left;"><li>Transition a given NameNode to standby:<em> <br/></em></li></ul><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -transitionToStandby &lt;serviceid&gt;</code> <em><br/></em></p><p style="margin-left: 60.0px;text-align: left;">For example:</p><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -transitionToStandby  nn1</code></p><ul style="text-align: left;"><li>Transition a given NameNode to active:</li></ul><p style="margin-left: 60.0px;text-align: left;">hdfs haadmin -transitionToActive &lt;serviceid&gt;</p><p style="margin-left: 60.0px;text-align: left;">For example:</p><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -transitionToActive  nn1</code></p><ul style="text-align: left;"><li>Failover between two NameNode: </li></ul><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin --failover &lt;serviceid&gt; &lt;serviceid&gt;</code></p><p style="margin-left: 60.0px;text-align: left;">For example:</p><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin --failover nn1 nn2</code> </p><h3 id="AdministeringPHDUsingtheCLI-Security">Security</h3><p>PHD clusters can configured to use Kerberos authentication.</p><p>Kerberos is a network authentication protocol that provides strong authentication for client/server applications using secret-key cryptography.</p><h4 id="AdministeringPHDUsingtheCLI-EnablingKerberosAuthentication">Enabling Kerberos Authentication</h4><p>You must install and configure Kerberos to enable security in Pivotal HD 1.1.x. and higher. Complete instructions are provided in the <em>PHD Stack and Tools Reference Guide</em>.</p><h4 id="AdministeringPHDUsingtheCLI-DisableKerberos"><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-DisableKerberos"></span></h4><h4 id="AdministeringPHDUsingtheCLI-DisablingKerberosAuthentication">Disabling Kerberos Authentication</h4><p>You need to disable Security before upgrading the cluster. To disable security do the following:</p><ol><li><p>Stop the cluster</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ol><h4 id="AdministeringPHDUsingtheCLI-HAAdminCommandReference" style="text-align: left;">HAAdmin Command Reference</h4><ul style="text-align: left;"><li><code>hdfs haadmin</code> prints help for all subcommands and options. <code>serviceid </code>is the logical name configured for each NameNode, as <code>namenode1id</code> and <code>namenode2id</code>, in <code>clusterConfig.xml</code></li><li>Check state of a given NameNode:<em> <br/> </em></li></ul><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -getServiceState &lt;serviceid&gt; Ex : hdfs haadmin -getServiceState nn1</code></p><ul style="text-align: left;"><li>Transition a given NameNode to standby:<em> <br/> </em></li></ul><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -transitionToStandby &lt;serviceid&gt;</code> <em> <br/> </em></p><p style="margin-left: 60.0px;text-align: left;">For example:</p><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -transitionToStandby  nn1</code></p><ul style="text-align: left;"><li>Transition a given NameNode to active:</li></ul><p style="margin-left: 60.0px;text-align: left;">hdfs haadmin -transitionToActive &lt;serviceid&gt;</p><p style="margin-left: 60.0px;text-align: left;">For example:</p><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin -transitionToActive  nn1</code></p><ul style="text-align: left;"><li>Failover between two NameNodes: </li></ul><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin --failover &lt;serviceid&gt; &lt;serviceid&gt;</code></p><p style="margin-left: 60.0px;text-align: left;">For example:</p><p style="margin-left: 60.0px;text-align: left;"><code>hdfs haadmin --failover nn1 nn2</code> </p><h3 id="AdministeringPHDUsingtheCLI-Security">Security</h3><p>PHD clusters can configured to use Kerberos authentication.</p><p>Kerberos is a network authentication protocol that provides strong authentication for client/server applications using secret-key cryptography.</p><h4 id="AdministeringPHDUsingtheCLI-EnablingKerberosAuthentication">Enabling Kerberos Authentication</h4><p>You must install and configure Kerberos to enable security in Pivotal HD 1.1.x. and higher. Complete instructions are provided in the <em>PHD Stack and Tools Reference Guide</em>.</p><h4 id="AdministeringPHDUsingtheCLI-DisableKerberos"><span class="confluence-anchor-link" id="AdministeringPHDUsingtheCLI-DisableKerberos"></span></h4><h4 id="AdministeringPHDUsingtheCLI-DisablingKerberosAuthentication">Disabling Kerberos Authentication</h4><p>You need to disable Security before upgrading the cluster. To disable security do the following:</p><ol><li><p>Stop the cluster:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client stop -l &lt;CLUSTER_NAME&gt;</pre>
-</div></div></li><li><p>If you have HBase installed and HBase-to-Zookeeper communication is secured (true in most cases), do the following steps.Tables created while HBase is secure have ACLs set on them which only allow SASL authenticated users to modify them. In order to operate in non-secure mode, you must do the following. You can skip these steps if you don't have HBase installed.</p><p> </p><ol><li><p>Start just the Zookeeper service. </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>If you have HBase installed and HBase-to-Zookeeper communication is secured (true in most cases), do the following steps.Tables created while HBase is secure have ACLs set on them that only allow SASL authenticated users to modify them. In order to operate in non-secure mode, you must do the following. You can skip these steps if you don't have HBase installed.</p><p> </p><ol><li><p>Start just the Zookeeper service. </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client start -l &lt;CLUSTER_NAME&gt; -s zookeeper</pre>
 </div></div></li><li>On HBase master:<ol><li><p>Run Zookeeper CLI: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# sudo -u hbase hbase zkcli</pre>
-</div></div></li><li><p>Check if there are any regions in transition. Output <code>[]</code> means there are NO regions in tranistion at the moment. and you don't need to set ACL on this sub znode.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Check if there are any regions in transition. Output <code>[]</code> means there are NO regions in transition at the moment and you don't need to set ACL on this sub znode.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[zk: node2.phddev.local:2181,node1.phddev.local:2181,node3.phddev.local:2181(CONNECTED) 0] ls /hbase/region-in-transition
 []</pre>
-</div></div><p>If there are regions in transition, either wait for them to finish (start cluster again) or set ACL to make then controllable by world. Do this for all the regions. <br/>For example, if you see a region like 156781230:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><p>If there are regions in transition, either wait for them to finish (start the cluster again) or set ACL to make them controllable by world. Do this for all the regions. <br/>For example, if you see a region like 156781230:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[zk: node2.phddev.local:2181,node1.phddev.local:2181,node3.phddev.local:2181(CONNECTED) 1] setAcl /hbase/region-in-tranistion/156781230 world:anyone:cdrwa</pre>
 </div></div></li><li><p>Check if there are unassigned regions. If there are any, set ACL to be controllable by world:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[zk: node2.phddev.local:2181,node1.phddev.local:2181,node3.phddev.local:2181(CONNECTED) 2] ls /hbase/unassigned
 [123456789]
 [zk: node2.phddev.local:2181,node1.phddev.local:2181,node3.phddev.local:2181(CONNECTED) 3] setAcl /hbase/unassigned/123456789 world:anyone:cdrwa</pre>
-</div></div></li><li><p class="p1">Do this for all the tables where ACL is set to anything other than <strong><code>world:anyone:cdrwa</code></strong> else they won't be readable while security is disabled.</p> <div class="aui-message hint shadowed information-macro">
+</div></div></li><li><p class="p1">Do this for all the tables where ACL is set to anything other than <strong> <code>world:anyone:cdrwa;</code> </strong> otherwise, they won't be readable while security is disabled.</p> <div class="aui-message hint shadowed information-macro">
 <span class="aui-icon icon-hint">Icon</span>
 <div class="message-content">
-<p><span class="aui-icon icon-hint"> </span>If you're only disabling security temporarily for upgrade and intend to enable it again after upgrade, you may skip setting ACLs on tables.</p>
+<p>If you're only disabling security temporarily for upgrade, and intend to enable it again after upgrade, you may skip setting ACLs on tables.</p>
 </div>
 </div>
 <p> </p><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
@@ -1267,24 +1265,24 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
 </div></div> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p class="p1">Alternatively, you may also remove the znode /<code>hbase</code> or any of its sub-znodes such as <code>/hbase/table</code> as they get re-created on HBase service restart. Also, this should only be done if HBase-master and HBase-regionserver were shutdown properly and there is no transient state yet to be synced back. </p><p class="p1"><strong>You must use this option with extreme caution and only if you're having trouble starting HBase service. Careless use may cause data loss.</strong></p><p class="p1">To remove a znode, for example<code>/hbase/table</code>, run the following</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<p class="p1">Alternatively, you may also remove the znode /<code>hbase</code> or any of its sub-znodes such as <code>/hbase/table,</code> as they will be re-created on HBase service restart. Also, this should only be done if HBase-master and HBase-regionserver were shutdown properly and there is no transient state yet to be synced back. </p><p class="p1"><strong>You must use this option with extreme caution and only if you're having trouble starting HBase service. Careless use may cause data loss.</strong></p><p class="p1">To remove a znode, for example<code>/hbase/table</code>, run the following</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[zk: node2.phddev.local:2181,node1.phddev.local:2181,node3.phddev.local:2181(CONNECTED) 9] rmr /hbase/table</pre>
 </div></div>
 </div>
 </div>
-</li><li><p>Quit the zookeeper CLI on HBase master node. You can disconnect from HBase master now.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</li><li><p>Quit the Zookeeper CLI on HBase master node. You can disconnect from HBase master now.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[zk: node2.phddev.local:2181,node1.phddev.local:2181,node3.phddev.local:2181(CONNECTED) 10] quit</pre>
 </div></div></li></ol></li><li><p>Stop the Zookeeper service from ICM Admin node. </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client stop -l test -s zookeeper</pre>
-</div></div></li></ol></li><li><p>You now need to remove security related changes from other service configuration files and scripts. You can use <code>icm_client reconfigure</code> for this purpose. Make sure it runs successfully on all nodes before proceeding further. Perform the following steps on ICM Admin node.</p><ol><li><p>Fetch the current configuration in a directory <code>SecureConfiguration</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ol></li><li><p>You now need to remove security related changes from other service configuration files and scripts. You can use <code>icm_client reconfigure</code> for this purpose. Make sure it runs successfully on all nodes before proceeding further. Perform the following steps on the ICM Admin node.</p><ol><li><p>Fetch the current configuration in a directory <code>SecureConfiguration</code> :</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client fetch-configuration -o SecureConfiguration</pre>
-</div></div></li><li>Copy <code>SecureConfiguration</code> to <code>NonSecureConfiguration</code></li><li><p>Change to <code>NonSecureConfiguration</code> directory and make the following modifications to disable security-related changes:</p> <div class="aui-message warning shadowed information-macro">
+</div></div></li><li>Copy <code>SecureConfiguration</code> to <code>NonSecureConfiguration.</code></li><li><p>Change to <code>NonSecureConfiguration</code> directory and make the following modifications to disable security-related changes:</p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<p>In general, while removing properties you may ignore and proceed further if it's already missing as it may happen depending on how the cluster was secured originally. Similarly, while editing properties if it already has recommended value, you may safely proceed further.</p>
+<p>In general, while removing properties, you may ignore and proceed further if the property is already missing, as this could happen because of how the cluster was secured originally. Similarly, while editing properties, if it already has the recommended value, you may safely proceed further.</p>
 </div>
 </div>
-<p><strong><br/></strong></p></li><ol><li><p>Remove the following from <code>hdfs/core-site.xml</code> (If present. Ignore if they're not present which may be the case in clusters secured without ICM's help)</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/core-site.xml</b></div><div class="codeContent panelContent pdl">
+<p><strong> <br/> </strong></p></li><ol><li><p>Remove the following from <code>hdfs/core-site.xml</code> (If present. Ignore if they're not present, which may be the case in clusters secured without ICM's help).</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/core-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;hadoop.security.authentication&lt;/name&gt;
   &lt;value&gt;kerberos&lt;/value&gt;
@@ -1302,7 +1300,7 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
   &lt;name&gt;hadoop.rpc.protection&lt;/name&gt;
   &lt;value&gt;privacy&lt;/value&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Remove the following from <code>hdfs/hdfs-site.xml</code>. (If present. Ignore if they're not present which may be the case in clusters secured without ICM's help) </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/hdfs-site.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>hdfs/hdfs-site.xml</code>. (If present. Ignore if they're not present, which may be the case in clusters secured without ICM's help) </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/hdfs-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;dfs.block.access.token.enable&lt;/name&gt;
   &lt;value&gt;true&lt;/value&gt;
@@ -1427,7 +1425,7 @@ sudo -u hdfs hdfs dfsadmin -saveNamespace</pre>
   &lt;name&gt;hadoop.proxyuser.oozie.groups&lt;/name&gt;
   &lt;value&gt;*&lt;/value&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Edit the following properties in <code>hdfs/hdfs-site.xml</code> to values as described below:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/hdfs-site.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Edit the following properties in <code>hdfs/hdfs-site.xml</code> to the values described below:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/hdfs-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;!-- For PHD-1.1.1.0 or PHD-1.1.0.0, set this to false --&gt;
 &lt;property&gt;
   &lt;name&gt;dfs.client.read.shortcircuit&lt;/name&gt;
@@ -1456,7 +1454,7 @@ OR
   &lt;name&gt;dfs.datanode.http.address&lt;/name&gt;
   &lt;value&gt;0.0.0.0:50075&lt;/value&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Edit <code>hdfs/hadoop-policy.xml</code>. Search for all instances of <code>&lt;value&gt;</code> and replace all instances of <strong><code>hdfs</code></strong> with <strong><code>${HADOOP_HDFS_USER}</code></strong> and <strong><code>yarn</code></strong> with <strong><code>${HADOOP_YARN_USER}</code></strong>. Some of the known instances are:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/hadoop-policy.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Edit <code>hdfs/hadoop-policy.xml</code>. Search for all instances of <code>&lt;value&gt;</code> and replace all instances of <strong> <code>hdfs</code> </strong> with <strong> <code>${HADOOP_HDFS_USER}</code> </strong> and <strong> <code>yarn</code> </strong> with <strong> <code>${HADOOP_YARN_USER}</code> </strong>. Some of the known instances are:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hdfs/hadoop-policy.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">  &lt;property&gt;
     &lt;name&gt;security.refresh.usertogroups.mappings.protocol.acl&lt;/name&gt;
     &lt;value&gt;${HADOOP_HDFS_USER}&lt;/value&gt;
@@ -1482,7 +1480,7 @@ OR
     &lt;name&gt;security.admin.protocol.acl&lt;/name&gt;
     &lt;value&gt;${HADOOP_YARN_USER}&lt;/value&gt;
   &lt;/property&gt;</pre>
-</div></div></li><li><p>Remove the following from <code>yarn/yarn-site.xml</code>. (If present. Please ignore if they're not present which may be the case in clusters secured without ICM's help)</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>yarn/yarn-site.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>yarn/yarn-site.xml</code>. (If present. Please ignore if they're not present, which may be the case in clusters secured without ICM's help)</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>yarn/yarn-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;yarn.resourcemanager.principal&lt;/name&gt;
   &lt;value&gt;yarn/_HOST@REALM&lt;/value&gt;
@@ -1522,7 +1520,7 @@ OR
   &lt;name&gt;yarn.web-proxy.principal&lt;/name&gt;
   &lt;value&gt;yarn/_HOST@REALM&lt;/value&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Remove the following from <code>yarn/mapred-site.xml</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>yarn/mapred-site.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>yarn/mapred-site.xml</code> .</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>yarn/mapred-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;mapreduce.jobhistory.keytab&lt;/name&gt;
   &lt;value&gt;/etc/security/phd/keytab/mapred.service.keytab&lt;/value&gt;
@@ -1539,18 +1537,18 @@ yarn.nodemanager.linux-container-executor.group=
 banned.users=
 #Prevent other super-users
 min.user.id=1000</pre>
-</div></div></li><li><p>Remove the following from <code>yarn/container-executor.cfg</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>yarn/container-executor.cfg</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>yarn/container-executor.cfg</code> :</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>yarn/container-executor.cfg</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">yarn.nodemanager.local-dirs=/data/1/yarn/nm-local-dir
 yarn.nodemanager.log-dirs=/data/1/yarn/userlogs</pre>
-</div></div></li><li><p>Remove the following from <code>zookeeper/zoo.cfg</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>zookeeper/zoo.cfg</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>zookeeper/zoo.cfg</code> :</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>zookeeper/zoo.cfg</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">authProvider.1=org.apache.zookeeper.server.auth.SASLAuthenticationProvider
 jaasLoginRenew=3600000
  
 kerberos.removeHostFromPrincipal=true
 kerberos.removeRealmFromPrincipal=true</pre>
-</div></div></li><li><p>For PHD-2.0.0.0 and higher, edit <code>zookeeper/java.env</code> to remove <code>-<span style="color: rgb(0,51,102);">Djava.security.auth.login.config<span>=/etc/gphd/zookeeper/conf/jaas.conf</span></span></code> from JVMFLAGS</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>zookeeper/java.env</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>For PHD-2.0.0.0 and higher, edit <code>zookeeper/java.env</code> to remove <code>-Djava.security.auth.login.config=/etc/gphd/zookeeper/conf/jaas.conf </code> from JVMFLAGS.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>zookeeper/java.env</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">export JVMFLAGS="-Xmx2048m"</pre>
-</div></div></li><li><p>Remove the following from <code>hbase/hbase-site.xml</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hbase/hbase-site.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>hbase/hbase-site.xml</code> .</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hbase/hbase-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;hbase.security.authentication&lt;/name&gt;
   &lt;value&gt;kerberos&lt;/value&gt;
@@ -1607,9 +1605,9 @@ kerberos.removeRealmFromPrincipal=true</pre>
   &lt;name&gt;hbase.rest.kerberos.principal&lt;/name&gt;
   &lt;value&gt;rest-users-principal-name&lt;/value&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Remove the following from <code>hbase/hbase-env.sh</code></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hbase/hbase-env.sh</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>hbase/hbase-env.sh.</code></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hbase/hbase-env.sh</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">export HBASE_OPTS="$HBASE_OPTS -Djava.security.auth.login.config=/etc/gphd/hbase/conf/jaas.conf"</pre>
-</div></div></li><li><p>Remove the following from <code>hive/hive-site.xml</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hive/hive-site.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>hive/hive-site.xml</code> .</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hive/hive-site.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;hive.server2.authentication&lt;/name&gt;
   &lt;value&gt;KERBEROS&lt;/value&gt;
@@ -1668,7 +1666,7 @@ kerberos.removeRealmFromPrincipal=true</pre>
   &lt;value&gt;hive-metastore/_HOST@REALM&lt;/value&gt;
   &lt;description&gt;The service principal for the metastore thrift server. The special string _HOST will be replaced automatically with the correct host name.&lt;/description&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>If present, remove the following from <code>hawq/hdfs-client.xml</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hawq/hdfs-client.xml</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>If present, remove the following from <code>hawq/hdfs-client.xml</code> .</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hawq/hdfs-client.xml</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">&lt;property&gt;
   &lt;name&gt;hadoop.security.authentication&lt;/name&gt;
   &lt;value&gt;kerberos&lt;/value&gt;
@@ -1678,10 +1676,10 @@ kerberos.removeRealmFromPrincipal=true</pre>
   &lt;name&gt;dfs.namenode.kerberos.principal&lt;/name&gt;
   &lt;value&gt;HDFS_NAMENODE_PRINCIPAL&lt;/value&gt;
 &lt;/property&gt;</pre>
-</div></div></li><li><p>Remove the following from <code>hawq/gpinitsystem_config</code> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hawq/gpinitsystem_config</b></div><div class="codeContent panelContent pdl">
+</div></div></li><li><p>Remove the following from <code>hawq/gpinitsystem_config</code> .</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>hawq/gpinitsystem_config</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">KERBEROS_KEYFILE=/path/to/keytab/file
 ENABLE_SECURE_FILESYSTEM=on</pre>
-</div></div></li></ol><li><p>Run ICM <code>reconfigure</code> using <code>NonSecureConfiguration</code> we just modifed to push these changes to cluster nodes:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li></ol><li><p>Run ICM <code>reconfigure</code> using the <code>NonSecureConfiguration</code> we just modifed to push these changes to cluster nodes:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client reconfigure -l &lt;CLUSTER_NAME&gt; -c NonSecureConfiguration</pre>
 </div></div></li></ol></li><li><p>With Cluster services still stopped, <strong>co</strong><strong>mment</strong> the following lines (if present; ignore otherwise) in <code>/etc/default/hadoop-hdfs-datanode</code>  on <strong>ALL</strong> DataNodes. </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>/etc/default/hadoop-hdfs-datanode on DataNode</b></div><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># secure operation stuff -- comment the following lines, if present and not commented. Ignore if a property is missing.
@@ -1689,7 +1687,7 @@ export HADOOP_SECURE_DN_USER=hdfs
 export HADOOP_SECURE_DN_LOG_DIR=${HADOOP_LOG_DIR}/hdfs
 export HADOOP_PID_DIR=/var/run/gphd/hadoop-hdfs/
 export HADOOP_SECURE_DN_PID_DIR=${HADOOP_PID_DIR}</pre>
-</div></div></li><li><p>For PHD-1.1.1.0 and lower, remove <code>/etc/gphd/zookeeper/conf/java.env</code> from all zookeeper-server nodes (if present). We recommend that you back-up the file before removing.</p></li><li>Remove security from any manually installed service following the reverse of instructions to enable them.</li><li><p>Start the Cluster. At this point, security should be disabled and you may run test commands to validate data is still accessible in non-secure mode. </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div></li><li><p>For PHD-1.1.1.0 and lower, remove <code>/etc/gphd/zookeeper/conf/java.env</code> from all zookeeper-server nodes (if present). We recommend that you back up the file before removing.</p></li><li>Remove security from any manually installed service, following the reverse of the instructions to enable them.</li><li><p>Start the Cluster. At this point, security should be disabled and you may run test commands to validate data is still accessible in non-secure mode. </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# icm_client start -l &lt;CLUSTER_NAME&gt;</pre>
 </div></div></li></ol><h3 id="AdministeringPHDUsingtheCLI-UninstallingaCluster">Uninstalling a Cluster</h3><p>You must run the stop command to stop running clusters before running the <code>uninstall </code>command. You must also ensure that HAWQ has been stopped before uninstall.</p><p>You will be prompted as to whether you want to preserve the history metrics of the cluster; the default behavior is to preserve the history.</p><p> </p> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
@@ -1719,27 +1717,27 @@ Options:
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# source /usr/local/hawq/greenplum_path.sh
 [gpadmin]# /etc/init.d/hawq init
 </pre>
-</div></div><p>Running the<code> init</code> command, completes the following:</p><ul><li>Initializes the HAWQ master and the segment hosts.</li><li>Starts the HAWQ master, segments, and the underlying postgres database.</li><li>Exchanges SSH keys between the Master and Segment nodes.</li></ul> <div class="aui-message warning shadowed information-macro">
+</div></div><p>Running the<code> init</code> command completes the following:</p><ul><li>Initializes the HAWQ master and the segment hosts.</li><li>Starts the HAWQ master, segments, and the underlying postgres database.</li><li>Exchanges SSH keys between the Master and Segment nodes.</li></ul> <div class="aui-message warning shadowed information-macro">
 <span class="aui-icon icon-warning">Icon</span>
 <div class="message-content">
-<ul><li>This operation takes a few minutes to complete.</li><li>If you need to initialize the HAWQ standby master refer to the <em>Pivotal HAWQ Installation Guide</em> for instructions</li></ul>
+<ul><li>This operation takes a few minutes to complete.</li><li>If you need to initialize the HAWQ standby master, refer to the <em>Pivotal HAWQ Installation Guide</em> for instructions</li></ul>
 </div>
 </div>
-<p>If you have a HAWQ Standby master in your cluster configuration, initialize that by running the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<p>If you have a HAWQ Standby master in your cluster configuration, initialize it by running the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;"># gpinitstandby -s &lt;HAWQ STANDBY MASTER FQDN&gt;</pre>
-</div></div><h3 id="AdministeringPHDUsingtheCLI-StartingHAWQ">Starting HAWQ</h3><p>Run the <code>start</code> command to start up the HAWQ master and all the segments hosts including the postgres database.</p><p>Note that this is implicitly done as part of the HAWQ Initialization.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><h3 id="AdministeringPHDUsingtheCLI-StartingHAWQ">Starting HAWQ</h3><p>Run the <code>start</code> command to start up the HAWQ master and all the segments hosts, including the postgres database.</p><p>Note that this is implicitly done as part of the HAWQ Initialization.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# /etc/init.d/hawq start
 </pre>
-</div></div><h3 id="AdministeringPHDUsingtheCLI-StoppingHAWQ">Stopping HAWQ</h3><p>Run the <code>stop</code> command to stop the hawq master, segments hosts, and the postgres database on the HAWQ master.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><h3 id="AdministeringPHDUsingtheCLI-StoppingHAWQ">Stopping HAWQ</h3><p>Run the <code>stop</code> command to stop the HAWQ master, segments hosts, and the postgres database on the HAWQ master.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">[gpadmin]# /etc/init.d/hawq stop
 </pre>
-</div></div><h3 id="AdministeringPHDUsingtheCLI-ModifyingHAWQUserConfiguration">Modifying HAWQ User Configuration</h3><p>If you are using Pivotal Command Center, you must modify your HAWQ user configuration file.</p><p>This is because the Admin host is not part of the HAWQ cluster. Modifying the <code>pg_hba.conf </code>file on the HAWQ Master host, gives the Admin host the ability to remote query HAWQ .</p><ol><li>Logon to the HAWQ Master as user <code>gpadmin</code>.</li><li>In the <code>$MASTER_DATA_DIRECTORY/pg_hba.conf </code>(the location of the HAWQ Master Directory is defined in the <code>&lt;hawq.master.directory&gt;</code> section of the <code>clusterConfig.xml</code> file used for deployment of the Cluster.<br/> Find the entry:<br/> <code>host all gpadmin &lt;master_host_ip&gt;/32 trust</code> <br/> Change the subnet entry depending on your network configuration:<br/> <code>host all gpadmin &lt;master_host_ip&gt;/24 trust</code></li><li><p>Restart HAWQ</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><h3 id="AdministeringPHDUsingtheCLI-ModifyingHAWQUserConfiguration">Modifying HAWQ User Configuration</h3><p>If you are using Pivotal Command Center, you must modify your HAWQ user configuration file.</p><p>This is because the Admin host is not part of the HAWQ cluster. Modifying the <code>pg_hba.conf </code>file on the HAWQ Master host gives the Admin host the ability to remote query HAWQ .</p><ol><li>Logon to the HAWQ Master as user <code>gpadmin</code>.</li><li>In the <code>$MASTER_DATA_DIRECTORY/pg_hba.conf </code>(the location of the HAWQ Master Directory is defined in the <code>&lt;hawq.master.directory&gt;</code> section of the <code>clusterConfig.xml</code> file used for deployment of the Cluster).<br/> Find the entry:<br/> <code>host all gpadmin &lt;master_host_ip&gt;/32 trust</code> <br/> Change the subnet entry, depending on your network configuration:<br/> <code>host all gpadmin &lt;master_host_ip&gt;/24 trust</code></li><li><p>Restart HAWQ.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">/etc/init.d/hawq restart
 </pre>
 </div></div></li></ol><p>Run the following command to test HAWQ from the Admin host:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">$ sudo -u gpadmin psql -h &lt;HAWQ MASTER NODE&gt; -p &lt;HAWQ PORT&gt; -U gpadmin postgres -c "select * from pg_stat_activity;"
 </pre>
-</div></div><h3 id="AdministeringPHDUsingtheCLI-ExpandingHAWQ">Expanding HAWQ</h3><p>HAWQ Segments can be expanded.</p><p>Before you expand a HAWQ segment you need to add slaves to the cluster by either:</p><ul><li>Running the <code>add-slaves</code> command (see <a href="#AdministeringPHDUsingtheCLI-ExpandingaCluster">Expanding a Cluster</a>)</li><li>Manually editing the <code>hawq-segments</code> section of the <code>clusterConfig.xml</code> file, then running the <code>reconfigure</code> command (see <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>)</li></ul><p>Once you have added the slaves, you can then expand HAWQ using the <code>gpexpand</code> command; refer to the <em>HAWQ Administration Guide - Expanding the HAWQ System </em>for details.</p><h2 id="AdministeringPHDUsingtheCLI-ManagingRolesandHosts">Managing Roles and Hosts</h2><p>Pivotal HD supports starting or stopping entire clusters or individual roles on a selected hosts. If you want to start and stop the roles manually follow these steps:</p><p>You have the following options when managing cluster and individual roles:</p><ul><li style="list-style-type: none;background-image: none;"><ul><li>Managing locally</li><li>Managing from the Admin Node</li></ul></li></ul><h3 id="AdministeringPHDUsingtheCLI-ManagingLocally">Managing Locally</h3><p>You can manage the service role on the target host locally. For example, to restart datanode:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+</div></div><h3 id="AdministeringPHDUsingtheCLI-ExpandingHAWQ">Expanding HAWQ</h3><p>HAWQ Segments can be expanded.</p><p>Before you expand a HAWQ segment, you need to add slaves to the cluster by either:</p><ul><li>Running the <code>add-slaves</code> command (see <a href="#AdministeringPHDUsingtheCLI-ExpandingaCluster">Expanding a Cluster</a>).</li><li>Manually editing the <code>hawq-segments</code> section of the <code>clusterConfig.xml</code> file, then running the <code>reconfigure</code> command (see <a href="#AdministeringPHDUsingtheCLI-ReconfiguringaCluster">Reconfiguring a Cluster</a>).</li></ul><p>Once you have added the slaves, you can then expand HAWQ using the <code>gpexpand</code> command; refer to the <em>HAWQ Administration Guide - Expanding the HAWQ System </em>for details.</p><h2 id="AdministeringPHDUsingtheCLI-ManagingRolesandHosts">Managing Roles and Hosts</h2><p>Pivotal HD supports starting or stopping entire clusters or individual roles on a selected hosts. If you want to start and stop the roles manually, follow these steps:</p><p>You have the following options when managing cluster and individual roles:</p><ul><li style="list-style-type: none;background-image: none;"><ul><li>Managing locally</li><li>Managing from the Admin Node</li></ul></li></ul><h3 id="AdministeringPHDUsingtheCLI-ManagingLocally">Managing Locally</h3><p>You can manage the service role on the target host locally. For example, to restart datanode:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">node100:gpadmin# ssh gpadmin@node100
 gpadmin# sudo service hadoop-hdfs-namenode restart
 </pre>
